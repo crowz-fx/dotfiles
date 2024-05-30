@@ -1,0 +1,3 @@
+#00 ln -f -s ~/.config/shell/zsh/profile ~/.zprofile
+
+echo 'profile from zsh'

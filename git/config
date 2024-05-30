@@ -1,0 +1,10 @@
+[user]
+    name = Lui Crowie
+    email = 22945441+crowz-fx@users.noreply.github.com
+[color]
+    ui = auto
+[core]
+	filemode = true
+    autocrlf = false
+[pull]
+	rebase = true

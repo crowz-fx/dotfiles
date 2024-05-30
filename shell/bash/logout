@@ -1,0 +1,3 @@
+#00 ln -f -s ~/.config/shell/bash/logout ~/.bash_logout
+
+echo 'bye from bash'
