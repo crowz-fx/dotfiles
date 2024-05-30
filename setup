@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+echo 'handling overwrites and setup for config...'
+
+echo 'add and handle all symlink processing'

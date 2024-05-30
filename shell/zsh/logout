@@ -1,0 +1,3 @@
+#00 ln -f -s ~/.config/shell/zsh/logout ~/.zlogout
+
+echo 'bye from zsh'

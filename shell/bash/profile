@@ -1,0 +1,5 @@
+#00 ln -f -s ~/.config/shell/bash/profile ~/.bash_profile
+
+echo 'hi from bash'
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
