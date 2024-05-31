@@ -4,7 +4,9 @@
 [color]
     ui = auto
 [core]
-	filemode = true
+    filemode = true
     autocrlf = false
 [pull]
-	rebase = true
+    rebase = true
+[init]
+    defaultBranch = master
