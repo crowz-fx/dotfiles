@@ -9,3 +9,4 @@ PS1='[\u@\h \W]\$ '
 
 source ~/.config/shell/bash/env
 source ~/.config/shell/additional_sources
+source ~/.config/shell/aliases

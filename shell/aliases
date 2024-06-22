@@ -1,0 +1,6 @@
+echo 'processing aliases...'
+
+alias cdgit='cd ~/git'
+alias cdstor='cd /mnt/storage'
+alias ll='ls -lart'
+alias g='git'
