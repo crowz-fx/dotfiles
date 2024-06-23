@@ -1,6 +1,121 @@
-echo 'processing aliases...'
+echo -n "aliases..."
 
-alias cdgit='cd ~/git'
-alias cdstor='cd /mnt/storage'
-alias ll='ls -lart'
-alias g='git'
+alias editconf="code ~/.config"
+
+# jumping places
+alias cdgit="cd ~/git"
+alias cdstor="cd /mnt/storage"
+alias cd..="cd .."
+alias ..="cd .."
+alias ...="cd ../../"
+alias ....="cd ../../../"
+
+# listing, looking and searching
+alias ls="ls --color=auto"
+alias ll="ls -lart"
+alias listgit="ll ${GIT_ROOT}"
+alias grep="grep --color=auto"
+alias env="env | sort"
+alias path='echo -e ${PATH//:/\\n}'
+alias du='du -kh'
+alias df='df -kTh'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias h='history'
+alias p="pwd"
+alias dirs="dirs -l -v"
+alias al="alias"
+alias cls="clear"
+
+# git
+alias g="git"
+alias gs="g status"
+alias gd="g diff"
+alias gf="g fetch"
+alias gfp="g fetch -p"
+alias gp="g pull"
+alias ga="g add"
+alias gc="g commit -m" # add message
+alias gcb="g checkout" # add branch
+alias gcnb="g checkout -b " # add name of branch
+alias gcm="g checkout master"
+alias gpu="g push"
+alias gbl="g branch -l"
+alias gbla="g branch -la"
+alias gsc="g switch -c"
+
+# docker
+alias d="docker"
+alias dpa="d ps -a"
+alias dl="d logs"
+alias dlf="d logs -f"
+alias deit="d exec -it"
+alias dstr="d start"
+alias dstp="d stop"
+alias drst="d restart"
+
+# helm
+alias h="helm"
+alias hn="h -n \${NS}"
+alias hla="h list -A"
+alias hup="h upgrade"
+alias hnup="hn upgrade"
+alias hun="h uninstall"
+alias hnun="hn uninstall"
+
+# k8s
+alias k="kubectl"
+alias kn="k -n \${NS}"
+alias kpod="k get pods"
+alias knpod="kn get pods"
+alias klog="k logs -f"
+alias knlog="kn logs -f"
+alias busyboxpod="if [ -z \$NS ]; then echo 'set NS dum dum!'; else cat <<EOF | k apply -n \${NS} -f -
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-lui
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    args:
+    - sleep
+    - infinity
+EOF
+fi"
+
+# aws
+alias av="aws-vault"
+alias avex="av exec \${AWS_DEFAULT_PROFILE} -- "
+alias aws="avex aws"
+alias acaller="aws sts get-caller-identity"
+
+# npm, node, npx
+alias npr="npm run"
+alias npi="npm install"
+
+# python & pip
+alias pip="pip3"
+alias pipi="pip3 install " # package name
+alias pipiu="pipi --user " # at user level and not env
+alias pipir="pipi -r requirements.txt "
+alias pipiru="pipir --user" 
+
+# terraform
+alias t="avex terraform"
+alias ti="t init"
+alias tf="t fmt -recursive"
+alias tv="t validate"
+terraform_initial_steps="ti && tf && tv"
+alias tp="${terraform_initial_steps} && t plan"
+alias ta="${terraform_initial_steps} && t apply"
+alias tdestroyiamsure="${terraform_initial_steps} && t destroy"
+alias tw="t workspace"
+
+# vpn(s)
+alias ovpn="openvpn"
+
+# checkmark
+printf '\u2705 '

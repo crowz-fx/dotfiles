@@ -1,0 +1,6 @@
+echo -n "env..."
+
+export GIT_ROOT="~/git"
+
+# checkmark
+printf '\u2705 '

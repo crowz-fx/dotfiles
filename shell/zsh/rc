@@ -102,6 +102,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.config/shell/zsh/env
-source ~/.config/shell/additional_sources
+echo -n "processing >> "
+source ~/shell/rc
+
+source ~/.config/shell/env
 source ~/.config/shell/aliases
+source ~/.config/shell/additional_sources
+
+source ~/.config/shell/zsh/env
+echo ""
