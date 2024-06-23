@@ -1,6 +1,8 @@
 echo -n "aliases..."
 
+# terminal, config and shell
 alias editconf="code ~/.config"
+alias mux='[ -z "$TMUX"  ] && { tmux new -As0; }'
 
 # jumping places
 alias cdgit="cd ~/git"
@@ -32,6 +34,7 @@ alias cls="clear"
 alias g="git"
 alias gs="g status"
 alias gd="g diff"
+alias gds="g diff --staged"
 alias gf="g fetch"
 alias gfp="g fetch -p"
 alias gp="g pull"
