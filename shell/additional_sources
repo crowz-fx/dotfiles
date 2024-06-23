@@ -1,3 +1,5 @@
+echo -n "sources..."
+
 # [ -z "$TMUX"  ] && { tmux new -As0; }
 
 export PYENV_ROOT="$HOME/.pyenv"
@@ -12,3 +14,6 @@ export NVM_DIR="$HOME/.nvm"
 set -o vi
 
 #export PATH=$PATH:/opt/flutter/bin
+
+# checkmark
+printf '\u2705 '
