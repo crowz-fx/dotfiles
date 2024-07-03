@@ -11,6 +11,7 @@ alias cd..="cd .."
 alias ..="cd .."
 alias ...="cd ../../"
 alias ....="cd ../../../"
+alias .....="cd ../../../../"
 
 # listing, looking and searching
 alias ls="ls --color=auto"
@@ -21,9 +22,12 @@ alias env="env | sort"
 alias path='echo -e ${PATH//:/\\n}'
 alias du='du -kh'
 alias df='df -kTh'
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm='rm -v'
+alias rmi='rm -iv'
+alias cp='cp -v'
+alias cpi='cp -iv'
+alias mv='mv -v'
+alias mvi='mv -iv'
 alias h='history'
 alias p="pwd"
 alias dirs="dirs -l -v"
