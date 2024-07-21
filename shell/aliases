@@ -124,5 +124,8 @@ alias tw="t workspace"
 # vpn(s)
 alias ovpn="openvpn"
 
+# dev
+alias caddy443="sudo caddy reverse-proxy --from https://localhost:443 --to http://localhost:3000"
+
 # checkmark
 printf '\u2705 '
