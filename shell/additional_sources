@@ -12,6 +12,7 @@ export NVM_DIR="$HOME/.nvm"
 set -o vi
 
 #export PATH=$PATH:/opt/flutter/bin
+export PATH=$PATH:~/.config/bin
 
 # checkmark
 printf '\u2705 '
