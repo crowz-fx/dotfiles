@@ -13,4 +13,5 @@ source ~/.config/shell/aliases
 source ~/.config/shell/additional_sources
 
 source ~/.config/shell/bash/env
+source ~/.config/shell/bash/aliases
 echo ""
