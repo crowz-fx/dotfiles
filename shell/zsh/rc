@@ -112,4 +112,5 @@ source ~/.config/shell/aliases
 source ~/.config/shell/additional_sources
 
 source ~/.config/shell/zsh/env
+source ~/.config/shell/zsh/aliases
 echo ""
