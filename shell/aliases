@@ -3,6 +3,7 @@ echo -n "aliases..."
 # terminal, config and shell
 alias editconf="code ~/.config"
 alias mux='[ -z "$TMUX"  ] && { tmux new -As0; }'
+alias v='vim'
 
 # jumping places
 alias cdgit="cd ~/git"
