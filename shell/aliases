@@ -5,6 +5,12 @@ alias editconf="code ~/.config"
 alias mux='[ -z "$TMUX"  ] && { tmux new -As0; }'
 alias v='vim'
 
+# connectivity
+alias how_usb='echo "usbipd.exe list; usbipd.exe attach --wsl --busid=<id>'
+alias picocom='picocom -e b'
+alias how_picocom='echo "picocom -b <baud rate> <device>"'
+alias serial='piccocom'
+
 # jumping places
 alias cdgit="cd ~/git"
 alias cdstor="cd /mnt/storage"
