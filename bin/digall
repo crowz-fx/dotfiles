@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # NOTE - not mine, stolen from https://gist.github.com/FreedomBen/23020c464779bb30cab754d92bdce6c6
 #   go show them some love, maybe there is also an updated version

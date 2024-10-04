@@ -1,5 +1,9 @@
 echo -n "aliases..."
 
+############################################################
+# Raw Alases
+############################################################
+
 # terminal, config and shell
 alias editconf="code ~/.config"
 alias mux='[ -z "$TMUX"  ] && { tmux new -As0; }'
@@ -133,6 +137,19 @@ alias ovpn="openvpn"
 
 # dev
 alias caddy443="sudo caddy reverse-proxy --from https://localhost:443 --to http://localhost:3000"
+
+############################################################
+# Functions - processing for aliases depending on OS/release
+############################################################
+
+# copy / pasta to work on WSL and normal *NIX systems
+if grep -qi WSL2 /proc/version; then
+  alias copy="clip.exe"
+  alias pasta="powershell.exe Get-Clipboard"
+else
+  alias copy="xclip -selection clipboard"
+  alias pasta="xclip -selection clipboard -o"
+fi
 
 # checkmark
 printf '\u2705 '
