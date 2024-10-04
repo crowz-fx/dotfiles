@@ -3,6 +3,8 @@ echo -n "env..."
 export GIT_ROOT="~/git"
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export DISPLAY=:0
+export LESS="-F -R -X $LESS"
 
 # checkmark
 printf '\u2705 '
