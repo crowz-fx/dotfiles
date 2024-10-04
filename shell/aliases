@@ -14,6 +14,15 @@ alias how_usb='echo "usbipd.exe list; usbipd.exe attach --wsl --busid=<id>'
 alias picocom='picocom -e b'
 alias how_picocom='echo "picocom -b <baud rate> <device>"'
 alias serial='picocom'
+alias ovpn="openvpn"
+
+# dns
+alias dns="sudo resolvectl"
+alias dns_watch="dns monitor"
+alias dns_stats="dns statistics"
+alias dns_status="dns status"
+alias dns_show="dns show-cache"
+alias dns_clear="dns flush-caches"
 
 # jumping places
 alias cdgit="cd ~/git"
@@ -131,9 +140,6 @@ alias tp="${terraform_initial_steps} && t plan"
 alias ta="${terraform_initial_steps} && t apply"
 alias tdestroyiamsure="${terraform_initial_steps} && t destroy"
 alias tw="t workspace"
-
-# vpn(s)
-alias ovpn="openvpn"
 
 # dev
 alias caddy443="sudo caddy reverse-proxy --from https://localhost:443 --to http://localhost:3000"
