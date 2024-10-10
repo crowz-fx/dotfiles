@@ -61,7 +61,7 @@ alias g="git"
 alias gs="g status"
 alias gd="g diff" # tracked file changes
 alias gds="g diff --staged" # all staged changes
-alias gdu="g ls-files --others --exclude-standard -z | xargs -0 -n 1 git --no-pager diff --color=always /dev/null | less" # not staged and not tracked changes
+alias gdu="g ls-files --others --exclude-standard -z | xargs -0 -n 1 git diff --color=always /dev/null" # not staged and not tracked changes
 alias gduraw="g ls-files --others --exclude-standard -z | xargs -0 -n 1 git --no-pager diff /dev/null" # same as gdu but no colour and no less wrap
 alias gf="g fetch"
 alias gfp="g fetch -p"
