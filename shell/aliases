@@ -59,12 +59,13 @@ alias pasta="xclip -selection clipboard -o"
 # git
 alias g="git"
 alias gs="g status"
-alias gd="g diff"
-alias gds="g diff --staged"
+alias gd="g diff" # tracked file changes
+alias gds="g diff --staged" # all staged changes
+alias gdu="g ls-files --others --exclude-standard -z | xargs -0 -n 1 git --no-pager diff --color=always /dev/null | less" # not staged and not tracked changes
+alias gduraw="g ls-files --others --exclude-standard -z | xargs -0 -n 1 git --no-pager diff /dev/null" # same as gdu but no colour and no less wrap
 alias gf="g fetch"
 alias gfp="g fetch -p"
 alias gp="g pull"
-alias ga="g add"
 alias gc="g commit -m" # add message
 alias gcb="g checkout" # add branch
 alias gcnb="g checkout -b " # add name of branch
@@ -73,6 +74,9 @@ alias gpu="g push"
 alias gbl="g branch -l"
 alias gbla="g branch -la"
 alias gsc="g switch -c"
+alias gstash="g stash"
+alias ga="g apply" # i don't do git add as alias as a 'safety' net
+alias gam="g am" # for mailbox etc.
 
 # docker
 alias d="docker"
