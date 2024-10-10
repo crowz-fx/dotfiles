@@ -53,6 +53,8 @@ alias p="pwd"
 alias dirs="dirs -l -v"
 alias al="alias"
 alias cls="clear"
+alias copy="xclip -selection clipboard"
+alias pasta="xclip -selection clipboard -o"
 
 # git
 alias g="git"
@@ -119,11 +121,13 @@ alias avex="av exec \${AWS_DEFAULT_PROFILE} -- "
 alias aws="avex aws"
 alias acaller="aws sts get-caller-identity"
 
-# npm, node, npx
+# npm, node, npx, pnpm
 alias npr="npm run"
 alias npi="npm install"
+alias pnpi="pnpm install"
 
 # python & pip
+alias py="python"
 alias pip="pip3"
 alias pipi="pip3 install " # package name
 alias pipiu="pipi --user " # at user level and not env
@@ -131,7 +135,7 @@ alias pipir="pipi -r requirements.txt "
 alias pipiru="pipir --user" 
 
 # terraform
-alias t="avex terraform"
+alias t="avex terraform" # need to restructure when not wrapped in av
 alias ti="t init"
 alias tf="t fmt -recursive"
 alias tv="t validate"
@@ -152,9 +156,7 @@ alias caddy443="sudo caddy reverse-proxy --from https://localhost:443 --to http:
 if grep -qi WSL2 /proc/version; then
   alias copy="clip.exe"
   alias pasta="powershell.exe Get-Clipboard"
-else
-  alias copy="xclip -selection clipboard"
-  alias pasta="xclip -selection clipboard -o"
+  alias cdgit="cd ~/git-wsl"
 fi
 
 # checkmark
