@@ -1,0 +1,48 @@
+#!/bin/bash
+
+TEXT="ciao"
+SEPERATOR="::"
+COUNT_PER_LINE=6
+LEFT_PADDING=5
+
+if [ ! -z "$1" ]; then
+  TEXT=$1
+fi
+
+if [ ! -z "$2" ]; then
+  SEPERATOR=$2
+fi
+
+# Format breakdown
+# example - \0x1b[38;5;1m
+#   \0x1b - literally means start the escape sequence
+#       [ - csi of select graphic rendition (SGR)
+#  38/48; - 38 = set foreground colour, 48 = set background colour
+#      5; - we're going to supply a number not rgb (for rgb use 2 like 2;r;g;b)
+#       1 - colour from 256 table
+#       m - end of SGR
+format_string() {
+  printf "\x1b[${1};5;${2}m${TEXT}${SEPERATOR}%-${LEFT_PADDING}i\x1b[0m" $2
+}
+
+# loop the 8-bit pallet
+print_colours() {
+  for i in {0..255}; do
+    if ! (($i % $COUNT_PER_LINE )); then
+        echo
+    fi
+
+    format_string $1 $i
+  done
+}
+
+echo "Colours, colours, colours..."
+
+# call twice, first for foreground, 2nd for background
+echo "Foreground:"
+print_colours 38
+echo
+
+printf "\n\nBackground:\n"
+print_colours 48
+echo
