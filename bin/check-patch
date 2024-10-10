@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "dude where's the patch?"
+  exit 1
+fi
+
+PATCH=$1
+
+echo "Processing patch [${PATCH}]..."
+
+printf "\n\x1b[38;5;2m%s\x1b[0m\n" "Stats:"
+git apply --stat $PATCH
+
+printf "\n\x1b[38;5;2m%s\x1b[0m\n" "Dry run apply:"
+git apply --check -v $PATCH
