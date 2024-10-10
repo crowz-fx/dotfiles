@@ -116,4 +116,5 @@ source ~/.config/shell/additional_sources
 
 source ~/.config/shell/zsh/env
 source ~/.config/shell/zsh/aliases
+source ~/.config/shell/zsh/prompt
 echo ""
