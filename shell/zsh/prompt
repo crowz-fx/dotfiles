@@ -1,0 +1,65 @@
+
+colour_wrap() {
+  echo "%F{\$COLOUR}$1%f"
+}
+
+text_wrap() {
+  echo "%F{white}$1%f"
+}
+
+set_prompt() {
+  if [ $? -eq 0 ]; then 
+    COLOUR="green"
+  else 
+    COLOUR="red"
+  fi
+
+  raw_string="" # always ensure this is reset
+  
+  # date and time
+  # raw_string+="$(colour_wrap "┌[")"
+  # raw_string+="$(text_wrap "%D:%*:%D{%a}")"
+  # raw_string+="$(colour_wrap "]")"
+
+  # user@short machine name
+  raw_string+="$(colour_wrap "┌[")"
+  raw_string+="$(text_wrap "%n@%m")" 
+  raw_string+="$(colour_wrap "]")"
+  
+  # login
+  raw_string+="$(colour_wrap "[")"
+  raw_string+="$(text_wrap "/dev/%y")"  
+  raw_string+="$(colour_wrap "]")"
+
+  # exit code
+  raw_string+="$(colour_wrap "[")"
+  raw_string+="$(text_wrap "%?")"
+  raw_string+="$(colour_wrap "]")"
+  
+  # TODO - change to nice format, not default
+  raw_string+=" $(git_prompt_info)"
+
+  # TODO - add functions to check if set/display
+  # is_aws_profile_set
+  # is_ns_profile_set
+  # is_region_set
+  # pyenv
+
+  # onto next line for prompt
+  raw_string+=$'\n' 
+  
+  # pwd
+  raw_string+="$(colour_wrap "└[")"
+  raw_string+="$(text_wrap "%~")" 
+  raw_string+="$(colour_wrap "]")"
+
+  raw_string+="$(text_wrap "> ")"
+  PROMPT=$raw_string
+}
+
+# append our func so it's loaded before the command line is rendered
+# the if logic is because i can run 'reloadshell', don't keep 
+# appending to the array
+if [ $(echo "${precmd_functions[@]}" | grep "set_prompt" | wc -l) -eq 0 ]; then
+  precmd_functions+=(set_prompt)
+fi
