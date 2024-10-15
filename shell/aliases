@@ -60,9 +60,9 @@ alias listgit="ll ${GIT_ROOT}"
 alias grep="grep --color=auto"
 alias env="env | sort"
 alias path='echo -e ${PATH//:/\\n}'
-alias du='du -kh'
-alias du_sum='du -khs'
-alias du_sorted_here='du . | sort -h'
+alias du='du -kh 2> /dev/null'
+alias du_sum='du -khs 2> /dev/null'
+alias du_sorted_here='du . 2> /dev/null | sort -h'
 alias df='df -kTh'
 alias rm='rm -v'
 alias rmi='rm -iv'
@@ -77,6 +77,7 @@ alias al="alias"
 alias cls="clear"
 alias copy="xclip -selection clipboard"
 alias pasta="xclip -selection clipboard -o"
+alias how_find_size="echo 'find <loc> -size +5M -exec ls -sh {} +'"
 
 # git
 alias g="git"
