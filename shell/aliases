@@ -33,14 +33,36 @@ alias ...="cd ../../"
 alias ....="cd ../../../"
 alias .....="cd ../../../../"
 
+# system/package management
+alias pinstall="sudo pacman -S --needed"
+alias pinstall_file="sudo pacman -U" # local file or URL
+alias premove="sudo pacman -R"
+alias premovedeps="sudo pacman -Rs"
+
+alias yinstall="yay -S --needed"
+alias yremove="yay -R"
+alias yremovedeps="yay -Rs"
+
+alias pkg_stats="yay -Ps"
+alias pkg_update="yay -Sy" # s=synchronise, y=update dbs
+alias pkg_fupdate="yay -Syy" # s=synchronise, yy=force update dbs
+alias pkg_upgrade="yay -Syu" # s=synchronise, y=update dbs, u=upgrade full system
+alias pkg_clean="yay -Sc" # sc=nuke all package caches, will confirm when running
+alias pkg_search="yay -Ss" # whole db search
+alias pkg_isearch="yay -Qs" # installed only search
+alias pkg_show="yay -Si" # show info on package, doens't have to be installed
+alias pkg_get="yay -Sw" # download a pkg
+
 # listing, looking and searching
 alias ls="ls --color=auto"
-alias ll="ls -lart"
+alias ll="ls -larth"
 alias listgit="ll ${GIT_ROOT}"
 alias grep="grep --color=auto"
 alias env="env | sort"
 alias path='echo -e ${PATH//:/\\n}'
 alias du='du -kh'
+alias du_sum='du -khs'
+alias du_sorted_here='du . | sort -h'
 alias df='df -kTh'
 alias rm='rm -v'
 alias rmi='rm -iv'
