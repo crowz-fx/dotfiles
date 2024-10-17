@@ -7,3 +7,11 @@ chromium/
 discord/*
 !discord/settings.json
 session/
+kde.org/
+obs-studio/
+baloo*
+kde*
+ktrashrc
+kservice*
+kiorc
+VSCodium/
