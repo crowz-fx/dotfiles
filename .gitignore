@@ -5,5 +5,5 @@ pulse/
 dconf/
 chromium/
 discord/*
-!discord/Preferences
 !discord/settings.json
+session/
