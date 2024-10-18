@@ -1,0 +1,26 @@
+"#00 ln -s -f ~/.config/vim/rc ~/.vimrc
+"https://www.vim.page/vimrc-configuration-guide
+
+set nocompatible
+set number
+
+filetype on
+filetype plugin on
+filetype indent on
+
+syntax on
+"set cursorline
+"set cursorcolumn
+set tabstop=2
+set shiftwidth=2
+set expandtab
+
+set nobackup
+set scrolloff=20
+"set nowrap
+set incsearch
+set showmode
+set showmatch
+set hlsearch
+set history=50
+
