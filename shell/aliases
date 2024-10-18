@@ -7,7 +7,9 @@ echo -n "aliases..."
 # terminal, config and shell
 alias editconf="code ~/.config"
 alias mux='[ -z "$TMUX"  ] && { tmux new -As0; }'
-alias v='vim'
+alias v="vim"
+alias propose="apropos"
+alias code="codium"
 
 # connectivity
 alias how_usb='echo "usbipd.exe list; usbipd.exe attach --wsl --busid=<id>'
@@ -78,6 +80,7 @@ alias cls="clear"
 alias copy="xclip -selection clipboard"
 alias pasta="xclip -selection clipboard -o"
 alias how_find_size="echo 'find <loc> -size +5M -exec ls -sh {} +'"
+alias free="free -m"
 
 # git
 alias g="git"
