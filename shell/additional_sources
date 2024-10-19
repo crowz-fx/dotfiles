@@ -12,7 +12,11 @@ export NVM_DIR="$HOME/.nvm"
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
-set -o vi
+if [ -f "$XDG_CONFIG_HOME/user-dirs.dirs" ]; then
+    set -a
+    source "$XDG_CONFIG_HOME/user-dirs.dirs"
+    set +a
+fi
 
 #export PATH=$PATH:/opt/flutter/bin
 export PATH=$PATH:~/.config/bin
