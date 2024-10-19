@@ -1,9 +1,13 @@
 echo -n "env..."
 
+export XDG_CONFIG_HOME="${HOME}/.config"
 export GIT_ROOT="~/git"
+
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
 export DISPLAY=:0
+
 export LESS="-F -R -X $LESS"
 
 # checkmark
