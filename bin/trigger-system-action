@@ -1,0 +1,23 @@
+#!/bin/bash
+
+. ~/.config/bin/utils.sh
+script_title="Trigger System Action"
+
+notif() {
+  send_notif "$script_title" "$@"
+}
+
+if [ -z "$1" ]; then
+  notif "Didn't supply an option"
+  exit 1
+fi
+
+action=$1
+
+if [[ "$action" == "menu" ]]; then
+  notif "Open Menu"
+  pidof wlogout || wlogout -P 3 -p layer-shell
+elif [[ "$action" == "lock" ]]; then
+  notif "Locking PC"
+  pidof hyprlock || hyprlock
+fi
