@@ -19,3 +19,5 @@ spotify/
 Notion/
 trashrc
 vlc/
+bashtop/*
+!bashtop/bashtop.cfg
