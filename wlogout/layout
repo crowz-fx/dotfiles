@@ -1,24 +1,24 @@
 {
   "label": "logout",
-  "action": "~/.config/bin/handle-powa logout",
+  "action": "~/.config/bin/handle-system-action logout",
   "text": "Logout [E]",
   "keybind": "e"
 }
 {
   "label": "shutdown",
-  "action": "~/.config/bin/handle-powa shutdown",
+  "action": "~/.config/bin/handle-system-action shutdown",
   "text": "Shutdown [S]",
   "keybind": "s"
 }
 {
   "label": "lock",
-  "action": "~/.config/bin/handle-powa lock",
+  "action": "~/.config/bin/handle-system-action lock",
   "text": "Lock [L]",
   "keybind": "l"
 }
 {
   "label": "sleep",
-  "action": "~/.config/bin/handle-powa sleep",
+  "action": "~/.config/bin/handle-system-action sleep",
   "text": "Sleep [Z]",
   "keybind": "z"
 }
@@ -30,7 +30,7 @@
 }
 {
   "label": "reboot",
-  "action": "~/.config/bin/handle-powa reboot",
+  "action": "~/.config/bin/handle-system-action reboot",
   "text": "Reboot [R]",
   "keybind": "r"
 }
