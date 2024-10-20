@@ -1,10 +1,10 @@
 #!/bin/bash
 
 . ~/.config/bin/utils.sh
-script_title="Powa"
+script_title="Handle System Action"
 
 notif() {
-  send_notif $script_title "$@"
+  send_notif "$script_title" "$@"
 }
 
 if [ -z "$1" ]; then
