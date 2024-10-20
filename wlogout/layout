@@ -1,36 +1,36 @@
 {
-  "label": "lock",
-  "action": "loginctl lock-session",
-  "text": "Lock",
-  "keybind": "l"
-}
-{
-  "label": "hibernate",
-  "action": "systemctl hibernate",
-  "text": "Hibernate",
-  "keybind": "h"
-}
-{
   "label": "logout",
-  "action": "sleep 1; hyprctl dispatch exit",
-  "text": "Logout",
+  "action": "~/.config/bin/handle-powa logout",
+  "text": "Logout [E]",
   "keybind": "e"
 }
 {
   "label": "shutdown",
-  "action": "systemctl poweroff",
-  "text": "Shutdown",
+  "action": "~/.config/bin/handle-powa shutdown",
+  "text": "Shutdown [S]",
   "keybind": "s"
 }
 {
-  "label": "suspend",
-  "action": "systemctl suspend",
-  "text": "Suspend",
-  "keybind": "u"
+  "label": "lock",
+  "action": "~/.config/bin/handle-powa lock",
+  "text": "Lock [L]",
+  "keybind": "l"
+}
+{
+  "label": "sleep",
+  "action": "~/.config/bin/handle-powa sleep",
+  "text": "Sleep [Z]",
+  "keybind": "z"
+}
+{
+  "label": "close",
+  "action": "exit",
+  "text": "Close [C]",
+  "keybind": "c"
 }
 {
   "label": "reboot",
-  "action": "systemctl reboot",
-  "text": "Reboot",
+  "action": "~/.config/bin/handle-powa reboot",
+  "text": "Reboot [R]",
   "keybind": "r"
 }
