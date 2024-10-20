@@ -1,0 +1,39 @@
+#!/bin/bash
+
+. ~/.config/bin/utils.sh
+script_title="Powa"
+
+notif() {
+  send_notif $script_title "$@"
+}
+
+if [ -z "$1" ]; then
+  notif "Didn't supply an option"
+  exit 1
+fi
+
+supplied_arg=$1
+case $supplied_arg in
+  "lock")
+    notif "Locking PC"
+    sleep 0.2; loginctl lock-session
+    ;;    
+  sleep)
+    notif "Sending to sleep"
+    sleep 0.2; systemctl suspend
+    ;;
+  reboot)
+    notif "Rebooting"
+    sleep 0.2; systemctl reboot
+    ;;
+  shutdown)
+    notif "Shutting down"
+    sleep 0.2; systemctl poweroff
+    ;;
+  logout)
+    notif "Logging out"
+    sleep 1; hyprctl dispatch exit
+    ;;
+  *)
+    notif "Unrecognised option supplied [$supplied_arg]"
+esac
