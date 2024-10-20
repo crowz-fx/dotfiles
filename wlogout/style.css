@@ -20,7 +20,9 @@ button {
   background-size: 25%;
 }
 
-button:focus, button:active, button:hover {
+button:focus,
+button:active,
+button:hover {
   background-color: #3700B3;
   outline-style: none;
 }
@@ -33,11 +35,11 @@ button:focus, button:active, button:hover {
   background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
 }
 
-#suspend {
+#sleep {
   background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
 }
 
-#hibernate {
+#close {
   background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
 }
 
