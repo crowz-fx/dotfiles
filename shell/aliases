@@ -11,6 +11,10 @@ alias v="vim"
 alias propose="apropos"
 alias code="codium"
 
+# system
+alias rebootn="sudo reboot now"
+alias rebootfw="sudo ufw disable && sudo ufw enable && sudo ufw reload"
+
 # connectivity
 alias how_usb='echo "usbipd.exe list; usbipd.exe attach --wsl --busid=<id>'
 alias picocom='picocom -e b'
