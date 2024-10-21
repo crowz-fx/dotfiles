@@ -1,0 +1,51 @@
+#!/bin/bash
+
+. ~/.config/bin/utils.sh
+script_title="Handle Audio"
+action=$1
+action_value=$2
+
+notif() {
+  send_notif "$script_title" "$@"
+}
+
+handle_sink_switch() {
+  current_sink=$(wpctl status | \
+    grep -Ei '(\*)(.*)([0-9]{2,}. )(monitor|headphones)' | \
+    awk '{print $3_$4}' \
+  )
+  # note - -line means won't trigger through mic output, change if ever switch
+  other_sink=$(wpctl status | \
+    grep -Ei '([0-9]{2,}. )(monitor|headphones-line)' | \
+    grep -v '*' | \
+    awk '{print $2_$3}' \
+  )
+
+  wpctl set-default $(echo $other_sink | awk -F '.' '{print $1}')
+  sleep 0.2; notif "Switched Output to [$other_sink]"
+}
+
+check_positional_arg $action "action"
+
+case $action in
+  gui)
+    notif "Open GUI"
+    sleep 0.2; pavucontrol
+    ;;
+  output)
+    check_positional_arg $action_value "action_value"
+    
+    # potential values for an action
+    #   output - mute, toggle
+
+    if [[ "$action_value" == "mute" ]]; then
+      wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+      sleep 0.2; notif "Toggled Mute"
+    elif [[ "$action_value" == "toggle" ]]; then
+      handle_sink_switch
+    fi
+
+    ;;
+  *)
+    notif "Unrecognised action supplied [$action]"
+esac

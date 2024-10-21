@@ -1,8 +1,10 @@
 # https://github.com/danyspin97/wpaperd?tab=readme-ov-file
 [default]
-duration = "30m"
+#duration = "30m"
 mode = "stretch"
+path = "~/pictures/backgrounds/earth-sunrise-6016x3889-12523.jpg"
 
 [any]
-# set to just a folder to rotate
-path = "~/pictures/backgrounds/"
+[DP-2]
+[DP-3]
+path = "~/pictures/backgrounds/earth-sunrise-6016x3889-12523.jpg"

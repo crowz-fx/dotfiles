@@ -14,7 +14,7 @@ fi
 
 supplied_arg=$1
 case $supplied_arg in
-  "lock")
+  lock)
     notif "Locking PC"
     sleep 0.2; loginctl lock-session
     ;;    
