@@ -177,7 +177,6 @@
     "format": "  🔌  ",
     "tooltip": true,
     "tooltip-format": "Trigger System Menu",
-    "menu": "on-click",
     "on-click": "$HOME/.config/bin/trigger-system-action menu"
   }
 }
