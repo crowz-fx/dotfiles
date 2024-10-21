@@ -12,6 +12,9 @@ UseTabForSwitchingSplitView=true
 Version=202
 ViewPropsTimestamp=2024,10,17,16,40,54.731
 
+[IconsMode]
+PreviewSize=144
+
 [InformationPanel]
 dateFormat=ShortFormat
 

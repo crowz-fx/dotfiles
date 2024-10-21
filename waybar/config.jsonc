@@ -9,11 +9,11 @@
     "custom/power",
     "idle_inhibitor",
     "tray",
-    "user",
+    // "user",
     "hyprland/workspaces",
-    "keyboard-state",
-    "hyprland/submap",
-    "custom/media"
+    // "keyboard-state",
+    "hyprland/submap"
+    // "custom/media"
   ],
   "modules-center": [
     "hyprland/window"
@@ -21,7 +21,7 @@
   "modules-right": [
     "mpd",
     "network",
-    "pulseaudio",
+    "wireplumber",
     // "power-profiles-daemon",
     "cpu",
     // "temperature",
@@ -91,20 +91,17 @@
   },
   "clock#ny": {
     "timezone": "America/New_York",
-    "tooltip": false,
-    // "format-alt": "{:%Y-%m-%d}"
+    "tooltip": false
   },
   "clock#lon": {
     "timezone": "Europe/London",
     "tooltip": false,
     "format": "{:%H:%M:%S}",
-    "interval": 1,
-    // "format-alt": "{:%Y-%m-%d}"
+    "interval": 1
   },
   "clock#jpy": {
     "timezone": "Japan",
-    "tooltip": false,
-    // "format-alt": "{:%Y-%m-%d}"
+    "tooltip": false
   },
   "cpu": {
     "format": "CPU:{usage}%",
@@ -151,28 +148,18 @@
     "format": "⬇️:{bandwidthDownBits} ⬆️:{bandwidthUpBits}",
     "interval": 5
   },
-  "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
+  "wireplumber": {
+    "scroll-step": 5, // %, can be a float
+    "format": "{volume}% {node_name} {icon}",
+    "format-muted": "{volume}% {node_name} 🔇",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "headphones-lineout": "🎧",
+      "monitor-hdmi2": "🖥️",
+      "monitor-hdmi1": "🖥️"
     },
-    "on-click": "pavucontrol"
+    "on-click": "$HOME/.config/bin/handle-audio output toggle",
+    "on-click-middle": "$HOME/.config/bin/handle-audio output mute",
+    "on-click-right": "$HOME/.config/bin/handle-audio gui"
   },
   "custom/media": {
     "format": "{icon} {text}",
@@ -187,7 +174,7 @@
     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
   "custom/power": {
-    "format": "  ⏻  ",
+    "format": "  🔌  ",
     "tooltip": true,
     "tooltip-format": "Trigger System Menu",
     "menu": "on-click",
