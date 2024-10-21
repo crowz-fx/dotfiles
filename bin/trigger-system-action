@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/.config/bin/utils.sh
+. ~/.config/bin/includes/utils.sh
 script_title="Trigger System Action"
 
 notif() {
