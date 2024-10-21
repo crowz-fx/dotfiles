@@ -1,5 +1,6 @@
 {
   "IS_MAXIMIZED": true,
   "IS_MINIMIZED": false,
-  "chromiumSwitches": {}
+  "chromiumSwitches": {},
+  "SKIP_HOST_UPDATE": true
 }
