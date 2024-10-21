@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ~/.config/bin/utils.sh
+. ~/.config/bin/includes/utils.sh
 script_title="Handle Audio"
 action=$1
 action_value=$2
