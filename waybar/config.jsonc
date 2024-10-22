@@ -5,6 +5,7 @@
   "height": 30, // empty = auto height
   // "width": 1280, // empty = auto width
   "spacing": 2, // margin between modules
+  "reload_style_on_change": true,
   "modules-left": [
     "custom/power",
     "idle_inhibitor",
@@ -15,13 +16,12 @@
     "hyprland/submap"
     // "custom/media"
   ],
-  "modules-center": [
-    "hyprland/window"
-  ],
+  "modules-center": ["hyprland/window"],
   "modules-right": [
     "mpd",
     "network",
     "wireplumber",
+    "custom/mic",
     // "power-profiles-daemon",
     "cpu",
     // "temperature",
@@ -115,7 +115,7 @@
     // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
     // "format-critical": "{temperatureC}°C {icon}",
-    "format": "CPU:{temperatureC}°C",
+    "format": "CPU:{temperatureC}°C"
     // "format-icons": [
     //     "",
     //     "",
@@ -125,17 +125,7 @@
   "backlight": {
     // "device": "acpi_video1",
     "format": "{percent}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -152,6 +142,7 @@
     "scroll-step": 5, // %, can be a float
     "format": "{volume}% {node_name} {icon}",
     "format-muted": "{volume}% {node_name} 🔇",
+    "max-volume": "100",
     "format-icons": {
       "headphones-lineout": "🎧",
       "monitor-hdmi2": "🖥️",
@@ -160,6 +151,15 @@
     "on-click": "$HOME/.config/bin/handle-audio output toggle",
     "on-click-middle": "$HOME/.config/bin/handle-audio output mute",
     "on-click-right": "$HOME/.config/bin/handle-audio gui"
+  },
+  "custom/mic": {
+    "interval": 1,
+    "format": "{}",
+    "format-muted": "{} 🔇",
+    "tooltip": true,
+    "return-type": "json",
+    "exec": "$HOME/.config/bin/handle-audio input get",
+    "on-click": "$HOME/.config/bin/handle-audio input toggle"
   },
   "custom/media": {
     "format": "{icon} {text}",
