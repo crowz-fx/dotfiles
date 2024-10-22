@@ -21,3 +21,4 @@ trashrc
 vlc/
 bashtop/*
 !bashtop/bashtop.cfg
+qalculate/
