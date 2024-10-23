@@ -159,7 +159,7 @@
     "tooltip": true,
     "return-type": "json",
     "exec": "$HOME/.config/bin/handle-audio input get",
-    "on-click": "$HOME/.config/bin/handle-audio input toggle"
+    "on-click-middle": "$HOME/.config/bin/handle-audio input mute"
   },
   "custom/media": {
     "format": "{icon} {text}",
