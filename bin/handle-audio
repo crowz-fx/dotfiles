@@ -75,8 +75,8 @@ case $action in
     check_positional_arg $action "action_value"
 
     # potential values for action
-    #   input - toggle
-    if [[ "$action_value" == "toggle" ]]; then
+    #   input - mute, get
+    if [[ "$action_value" == "mute" ]]; then
       wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
       sleep 0.2; notif "Toggled Mic Mute"
     elif [[ "$action_value" == "get" ]]; then
