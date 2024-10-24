@@ -9,7 +9,6 @@ alias editconf="code ~/.config"
 alias mux='[ -z "$TMUX"  ] && { tmux new -As0; }'
 alias v="vim"
 alias propose="apropos"
-alias code="codium"
 
 # system
 alias rebootn="sudo reboot now"
