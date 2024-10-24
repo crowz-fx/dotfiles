@@ -22,3 +22,5 @@ vlc/
 bashtop/*
 !bashtop/bashtop.cfg
 qalculate/
+Code/
+Code - OSS/
