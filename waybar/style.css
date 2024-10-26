@@ -2,11 +2,13 @@
   /* `otf-font-awesome` is required to be installed for icons */
   font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
   font-size: 13px;
+  border-radius: 4px;
 }
 
 window#waybar {
-  background-color: rgba(43, 48, 59, 0.5);
-  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+  /* background-color: rgba(43, 48, 59, 0.5); */
+  background-color: transparent;
+  /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
   color: #ffffff;
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -94,6 +96,7 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #custom-mic,
+#custom-power,
 #mpd {
   padding: 0 10px;
   color: #ffffff;
@@ -251,11 +254,14 @@ label:focus {
   background-color: #eb4d4b;
 }
 
-#idle_inhibitor {
+#idle_inhibitor,
+#custom-power {
   background-color: #2d3436;
 }
 
-#idle_inhibitor.activated {
+#idle_inhibitor.activated,
+#idle_inhibitor:hover,
+#custom-power:hover {
   background-color: #ecf0f1;
   color: #2d3436;
 }
