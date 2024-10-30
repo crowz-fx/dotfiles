@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# TODO - change to handle memory, cpu, temps etc.
+
+nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits
