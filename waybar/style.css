@@ -97,6 +97,7 @@ button:hover {
 #power-profiles-daemon,
 #custom-mic,
 #custom-power,
+#custom-gpu,
 #mpd {
   padding: 0 10px;
   color: #ffffff;
@@ -198,7 +199,8 @@ label:focus {
   background-color: #f53c3c;
 }
 
-#pulseaudio {
+#pulseaudio,
+#custom-gpu {
   background-color: #f1c40f;
   color: #000000;
 }
