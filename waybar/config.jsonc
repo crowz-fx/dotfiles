@@ -7,27 +7,28 @@
   "spacing": 2, // margin between modules
   "reload_style_on_change": true,
   "modules-left": [
+    "hyprland/workspaces",
     "custom/power",
     "idle_inhibitor",
-    "tray",
     // "user",
-    "hyprland/workspaces",
+    // "temperature",
+    "cpu",
+    "custom/gpu",
+    "memory",
+    "network",
+    // "disk#root",
+    // "disk#storage",
     // "keyboard-state",
     "hyprland/submap"
     // "custom/media"
   ],
   "modules-center": ["hyprland/window"],
   "modules-right": [
+    "tray",
     "mpd",
-    "network",
     "wireplumber",
     "custom/mic",
     // "power-profiles-daemon",
-    "cpu",
-    // "temperature",
-    "memory",
-    // "disk#root",
-    // "disk#storage",
     "clock#ny",
     "clock#lon",
     "clock#jpy"
@@ -104,10 +105,12 @@
     "tooltip": false
   },
   "cpu": {
+    "interval": 5,
     "format": "CPU:{usage}%",
     "tooltip": false
   },
   "memory": {
+    "interval": 5,
     "format": "MEM:{}%"
   },
   "temperature": {
@@ -178,5 +181,11 @@
     "tooltip": true,
     "tooltip-format": "Trigger System Menu",
     "on-click": "$HOME/.config/bin/trigger-system-action menu"
+  },
+  "custom/gpu": {
+    "interval": 5,
+    "format": "GPU:{}%",
+    "exec": "$HOME/.config/bin/get-stats",
+    "tooltip": false
   }
 }
