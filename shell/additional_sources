@@ -18,6 +18,12 @@ if [ -f "$XDG_CONFIG_HOME/user-dirs.dirs" ]; then
     set +a
 fi
 
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
 #export PATH=$PATH:/opt/flutter/bin
 export PATH=$PATH:~/.config/bin
 
