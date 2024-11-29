@@ -28,3 +28,9 @@ unity3d/
 TradingView/
 libvirt/
 configstore/
+tool_state
+settings
+.android/
+Google/
+Android*/
+QtProject.conf
