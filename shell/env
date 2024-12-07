@@ -12,5 +12,7 @@ export DISPLAY=:0
 
 export LESS="-F -R -X $LESS"
 
+export QT_STYLE_OVERRIDE=kvantum
+
 # checkmark
 printf '\u2705 '
