@@ -80,8 +80,8 @@ alias p="pwd"
 alias dirs="dirs -l -v"
 alias al="alias"
 alias cls="clear"
-alias copy="xclip -selection clipboard"
-alias pasta="xclip -selection clipboard -o"
+alias copy="wl-copy"
+alias pasta="wl-paste"
 alias how_find_size="echo 'find <loc> -size +5M -exec ls -sh {} +'"
 alias free="free -m"
 
@@ -190,6 +190,11 @@ if grep -qi WSL2 /proc/version; then
   alias copy="clip.exe"
   alias pasta="powershell.exe Get-Clipboard"
   alias cdgit="cd ~/git-wsl"
+
+# wayland is default display server, override if using X11
+elif [[ $XDG_SESSION_TYPE == "x11" ]]; then
+  alias copy="xclip -selection clipboard"
+  alias pasta="xclip -selection clipboard -o"
 fi
 
 # checkmark
