@@ -2,4 +2,10 @@
 
 echo 'handling overwrites and setup for config...'
 
+# TODO - go through all files in here and process any that have #00
+
+# process all the reverse symlinks, i.e. from private into public
+ln -s ~/autostart ~/.config/autostart
+ln -s ~/gtk-3.0/bookmarks ~/.config/gtk-3.0/bookmarks
+
 echo 'add and handle all symlink processing'
