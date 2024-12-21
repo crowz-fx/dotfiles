@@ -1,0 +1,15 @@
+#!/bin/bash
+
+. ~/.config/bin/includes/utils.sh
+script_title="Handle X11 Open"
+application=$1
+
+check_positional_arg $application "application"
+
+# dead-ass, run an app directly via x11 with no DE or WM
+# for use with apps that have bugs like currently freecad
+# won't run on wayland, so either jump into an x11 session
+# like i3 or new TTY (ctrl+alt+fn<num>), login and run
+#   handle-x-open /usr/bin/freecad
+
+startx $application -geometry 1920x1080+0
