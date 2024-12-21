@@ -2,9 +2,4 @@
 [default]
 #duration = "30m"
 mode = "stretch"
-path = "~/pictures/backgrounds/earth-sunrise-6016x3889-12523.jpg"
-
-[any]
-[DP-2]
-[DP-3]
-path = "~/pictures/backgrounds/earth-sunrise-6016x3889-12523.jpg"
+path = "~/pictures/backgrounds/nord-background/1r1kk9qi00961.png"
