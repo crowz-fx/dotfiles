@@ -21,7 +21,8 @@ trashrc
 vlc/
 bashtop/*
 !bashtop/bashtop.cfg
-qalculate/
+qalculate/*
+!qalculate/qalc.cfg
 Code/
 Code - OSS/
 unity3d/
@@ -35,5 +36,4 @@ Google/
 Android*/
 QtProject.conf
 VirtualBox/
-systemd/
 FreeCAD/
