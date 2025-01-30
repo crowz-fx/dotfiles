@@ -37,3 +37,14 @@ Android*/
 QtProject.conf
 VirtualBox/
 FreeCAD/
+Thunar/accels.scm
+Fritzing/
+stripe/
+gtk-3.0/
+hardinfo2/
+!LM Studio/
+LM Studio/*
+!LM Studio/settings.json
+!geeqie/
+geeqie/*
+!geeqie/geeqierc.xml
