@@ -9,7 +9,9 @@ application/x-extension-shtml=firefox.desktop
 application/xhtml+xml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
-image/png=chromium.desktop
+image/png=org.geeqie.Geeqie.desktop
+image/jpeg=org.geeqie.Geeqie.desktop
+inode/directory=thunar.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
@@ -22,4 +24,8 @@ application/x-extension-shtml=firefox.desktop;
 application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
-image/png=chromium.desktop;
+image/png=org.geeqie.Geeqie.desktop;
+video/x-matroska=io.github.celluloid_player.Celluloid.desktop;vlc.desktop;
+text/markdown=code.desktop;
+image/jpeg=org.geeqie.Geeqie.desktop;
+inode/directory=thunar.desktop;
