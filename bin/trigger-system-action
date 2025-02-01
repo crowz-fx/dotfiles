@@ -21,8 +21,8 @@ elif [[ "$action" == "lock" ]]; then
   notif "Locking PC"
 
   # keyring doesn't lock on lock, dumb, so force a lock of all keyrings/collections
-  #   add --print-reply to get return values
   dbus-send --dest=org.gnome.keyring \
+    --print-reply \
     /org/freedesktop/secrets \
     org.freedesktop.Secret.Service.LockService
 
