@@ -42,10 +42,12 @@ alias pinstall="sudo pacman -S --needed"
 alias pinstall_file="sudo pacman -U" # local file or URL
 alias premove="sudo pacman -R"
 alias premovedeps="sudo pacman -Rs"
+alias pnuke="sudo pacman -Runs"
 
 alias yinstall="yay -S --needed"
 alias yremove="yay -R"
 alias yremovedeps="yay -Rs"
+alias ynuke="yay -Runs"
 
 alias pkg_stats="yay -Ps"
 alias pkg_update="yay -Sy" # s=synchronise, y=update dbs
