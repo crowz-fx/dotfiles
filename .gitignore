@@ -48,3 +48,7 @@ LM Studio/*
 !geeqie/
 geeqie/*
 !geeqie/geeqierc.xml
+cinnamon/
+menus/
+nemo/
+cinnamon*
