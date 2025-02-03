@@ -39,6 +39,7 @@ text/x-python=code.desktop
 text/x-sql=code.desktop
 text/x-vb=code.desktop
 text/yaml=code.desktop
+image/svg+xml=org.geeqie.Geeqie.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
@@ -84,3 +85,4 @@ text/x-sql=code.desktop;
 text/x-vb=code.desktop;
 text/yaml=code.desktop;
 text/plain=code.desktop;
+image/svg+xml=org.geeqie.Geeqie.desktop;
