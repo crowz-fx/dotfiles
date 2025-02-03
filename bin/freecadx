@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# freecad should work under wayland but there is some dumb bug that
+# is being debated, still works in X11, so use this wraps in Xwayland;
+# means no need to jump into X11 DE
+env QT_QPA_PLATFORM=xcb freecad &

@@ -64,7 +64,7 @@ alias ls="ls --color=auto"
 alias ll="ls -larth"
 alias listgit="ll ${GIT_ROOT}"
 alias grep="grep --color=auto"
-alias env="env | sort"
+alias envs="env | sort"
 alias path='echo -e ${PATH//:/\\n}'
 alias du='du -kh 2> /dev/null'
 alias du_sum='du -khs 2> /dev/null'
