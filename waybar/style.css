@@ -1,14 +1,14 @@
 * {
-  /* `otf-font-awesome` is required to be installed for icons */
-  font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-family: "Noto Sans Medium", Arial, sans-serif;
+  font-size: 12px;
   border-radius: 4px;
 }
 
 window#waybar {
-  /* background-color: rgba(43, 48, 59, 0.5); */
+  background-color: rgba(43, 48, 59, 1);
   background-color: transparent;
   /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+  border: none;
   color: #ffffff;
   transition-property: background-color;
   transition-duration: 0.5s;
@@ -103,9 +103,13 @@ button:hover {
   color: #ffffff;
 }
 
-#window,
+/* #window,
 #workspaces {
-  margin: 0 4px;
+  margin: 0 1px;
+} */
+
+#workspaces {
+  background-color: #2d3436;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -177,10 +181,12 @@ label:focus {
 #cpu {
   background-color: #2ecc71;
   color: #000000;
+  min-width: 60px;
 }
 
 #memory {
   background-color: #9b59b6;
+  min-width: 100px;
 }
 
 #disk {
@@ -193,6 +199,7 @@ label:focus {
 
 #network {
   background-color: #2980b9;
+  min-width: 170px;
 }
 
 #network.disconnected {
