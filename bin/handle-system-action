@@ -2,38 +2,31 @@
 
 . ~/.config/bin/includes/utils.sh
 script_title="Handle System Action"
+supplied_arg=${1:-null}
 
-notif() {
-  send_notif "$script_title" "$@"
-}
+script_check_positional_arg $supplied_arg "action"
 
-if [ -z "$1" ]; then
-  notif "Didn't supply an option"
-  exit 1
-fi
-
-supplied_arg=$1
 case $supplied_arg in
   lock)
-    notif "Locking PC"
+    script_notif "Locking PC"
     sleep 0.2; loginctl lock-session
     ;;    
   sleep)
-    notif "Sending to sleep"
+    script_notif "Sending to sleep"
     sleep 0.2; systemctl suspend
     ;;
   reboot)
-    notif "Rebooting"
+    script_notif "Rebooting"
     sleep 0.2; systemctl reboot
     ;;
   shutdown)
-    notif "Shutting down"
+    script_notif "Shutting down"
     sleep 0.2; systemctl poweroff
     ;;
   logout)
-    notif "Logging out"
+    script_notif "Logging out"
     sleep 1; hyprctl dispatch exit
     ;;
   *)
-    notif "Unrecognised option supplied [$supplied_arg]"
+    script_notif_critical "Unrecognised option supplied [$supplied_arg]"
 esac
