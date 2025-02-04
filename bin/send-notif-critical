@@ -4,4 +4,4 @@
 
 . ~/.config/bin/includes/utils.sh
 
-send_notif "$@"
+send_notif_critical "$@"

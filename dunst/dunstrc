@@ -1,0 +1,42 @@
+[global]
+monitor = 0
+follow = none
+width = 300
+#height = 300
+notification_limit = 20
+origin = top-right
+offset = (10, 10)
+icon_corners = all
+icon_corner_radius = 2
+padding = 10
+horizontal_padding = 10
+frame_width = 2
+gap_size = 0
+sort = true
+layer = overlay
+font = "Noto Sans Medium 10"
+line_height = 0
+format = "<b>%s</b>\n%b"
+stack_duplicates = true
+hide_duplicate_count = false
+show_indicators = true
+icon_theme = "Adwaita"
+corner_radius = 3
+frame_color = "#8aadf4"
+separator_color= frame
+highlight = "#8aadf4"
+
+[urgency_low]
+background = "#24273a"
+foreground = "#cad3f5"
+
+[urgency_normal]
+background = "#24273a"
+foreground = "#cad3f5"
+
+[urgency_critical]
+background = "#24273a"
+foreground = "#cad3f5"
+frame_color = "#f5a97f"
+
+
