@@ -1,11 +1,10 @@
 #!/bin/bash
 
-if [ -z "$1" ]; then
-  echo "dude where's the patch?"
-  exit 1
-fi
+. ~/.config/bin/includes/utils.sh
+script_title="Check Patch"
+PATCH="${1:-null}"
 
-PATCH=$1
+script_check_positional_arg $PATCH "patch file"
 
 echo "Processing patch [${PATCH}]..."
 

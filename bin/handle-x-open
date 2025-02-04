@@ -2,9 +2,9 @@
 
 . ~/.config/bin/includes/utils.sh
 script_title="Handle X11 Open"
-application=$1
+application="${1:-null}"
 
-check_positional_arg $application "application"
+script_check_positional_arg $application "application"
 
 # dead-ass, run an app directly via x11 with no DE or WM
 # for use with apps that have bugs like currently freecad
