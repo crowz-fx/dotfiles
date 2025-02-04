@@ -79,6 +79,7 @@ button:hover {
   box-shadow: inset 0 -3px #ffffff;
 }
 
+#tray,
 #clock,
 #battery,
 #cpu,
@@ -90,7 +91,6 @@ button:hover {
 #pulseaudio,
 #wireplumber,
 #custom-media,
-#tray,
 #mode,
 #idle_inhibitor,
 #scratchpad,
@@ -181,12 +181,12 @@ label:focus {
 #cpu {
   background-color: #2ecc71;
   color: #000000;
-  min-width: 60px;
+  /* min-width: 55px; */
 }
 
 #memory {
   background-color: #9b59b6;
-  min-width: 100px;
+  /* min-width: 90px; */
 }
 
 #disk {
@@ -199,7 +199,7 @@ label:focus {
 
 #network {
   background-color: #2980b9;
-  min-width: 170px;
+  /* min-width: 170px; */
 }
 
 #network.disconnected {
@@ -210,6 +210,10 @@ label:focus {
 #custom-gpu {
   background-color: #f1c40f;
   color: #000000;
+}
+
+#custom-gpu {
+  /* min-width: 55px; */
 }
 
 #pulseaudio.muted {

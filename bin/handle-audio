@@ -2,12 +2,8 @@
 
 . ~/.config/bin/includes/utils.sh
 script_title="Handle Audio"
-action=$1
-action_value=$2
-
-notif() {
-  send_notif "$script_title" "$@"
-}
+action="${1:-null}"
+action_value="${2:-null}"
 
 handle_sink_switch() {
   current_sink=$(wpctl status | \
@@ -22,7 +18,7 @@ handle_sink_switch() {
   )
 
   wpctl set-default $(echo $other_sink | awk -F '.' '{print $1}')
-  sleep 0.2; notif "Switched Output to [$other_sink]"
+  sleep 0.2; script_notif "Switched Output to [$other_sink]"
 }
 
 handle_source_get() {
@@ -44,45 +40,45 @@ handle_source_get() {
   sleep 0.2
 }
 
-check_positional_arg $action "action"
+script_check_positional_arg $action "action"
 
 case $action in
   gui)
-    notif "Open GUI"
+    script_notif "Open GUI"
     sleep 0.2; pavucontrol
     ;;
   output)
-    check_positional_arg $action_value "action_value"
+    script_check_positional_arg $action_value "action_value"
     
     # potential values for an action
     #   output - mute, toggle, increase, decrease
 
     if [[ "$action_value" == "mute" ]]; then
       wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-      sleep 0.2; notif "Toggled Mute"
+      sleep 0.2; script_notif "Toggled Mute"
     elif [[ "$action_value" == "toggle" ]]; then
       handle_sink_switch
     elif [[ "$action_value" == "increase" ]]; then
       wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
-      sleep 0.2; notif "Increased Volume"
+      sleep 0.2; script_notif "Increased Volume"
     elif [[ "$action_value" == "decrease" ]]; then
       wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
-      sleep 0.2; notif "Decreased Volume"
+      sleep 0.2; script_notif "Decreased Volume"
     fi
 
     ;;
   input)
-    check_positional_arg $action "action_value"
+    script_check_positional_arg $action "action_value"
 
     # potential values for action
     #   input - mute, get
     if [[ "$action_value" == "mute" ]]; then
       wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
-      sleep 0.2; notif "Toggled Mic Mute"
+      sleep 0.2; script_notif "Toggled Mic Mute"
     elif [[ "$action_value" == "get" ]]; then
       handle_source_get
     fi
   ;;
   *)
-    notif "Unrecognised action supplied [$action]"
+    script_notif_critical "Unrecognised action supplied [$action]"
 esac
