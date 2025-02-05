@@ -1,4 +1,5 @@
-# for refernence - https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
+# for reference - https://zsh.sourceforge.io/Doc/Release/Prompt-Expansion.html
+echo -n "prompt"
 
 colour_wrap() {
   echo "%F{\$COLOUR}$1%f"

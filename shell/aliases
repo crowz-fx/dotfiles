@@ -1,4 +1,4 @@
-echo -n "aliases..."
+echo -n "aliases"
 
 ############################################################
 # Raw Alases
@@ -197,6 +197,3 @@ elif [[ $XDG_SESSION_TYPE == "x11" ]]; then
   alias copy="xclip -selection clipboard"
   alias pasta="xclip -selection clipboard -o"
 fi
-
-# checkmark
-printf '\u2705 '
