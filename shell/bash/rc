@@ -5,13 +5,29 @@
 
 PS1='[\u@\h \W]\$ '
 
-echo -n "processing >> "
+echo "processing"
+echo -en "  hidden ["
 source ~/shell/rc
 
-source ~/.config/shell/env
-source ~/.config/shell/aliases
-source ~/.config/shell/additional_sources
+CHECKMARK="\u2705"
+FAILED="\xF0\x9F\x9A\xAB"
 
-source ~/.config/shell/bash/env
-source ~/.config/shell/bash/aliases
-echo ""
+# $1 - file to source
+# $2 - append to printf
+source_file() {
+  source $1 2> /dev/null
+  if [ $? -ne 0 ]; then
+    printf "$1...$FAILED$2"
+  else
+    printf "...$CHECKMARK$2"
+  fi
+}
+
+echo -en "\\n  public ["
+source_file ~/.config/shell/env ", "
+source_file ~/.config/shell/aliases ", "
+source_file ~/.config/shell/additional_sources "]"
+
+echo -en "\\n    bash ["
+source_file ~/.config/shell/bash/env ", "
+source_file ~/.config/shell/bash/aliases "]\n"
