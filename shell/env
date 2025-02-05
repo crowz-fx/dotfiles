@@ -1,4 +1,4 @@
-echo -n "env..."
+echo -n "env"
 
 set -o vi
 
@@ -13,6 +13,3 @@ export EDITOR="$VISUAL"
 export LESS="-F -R -X $LESS"
 
 export QT_STYLE_OVERRIDE=kvantum
-
-# checkmark
-printf '\u2705 '

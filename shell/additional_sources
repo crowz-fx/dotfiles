@@ -1,4 +1,4 @@
-echo -n "sources..."
+echo -n "sources"
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
@@ -26,6 +26,3 @@ esac
 
 #export PATH=$PATH:/opt/flutter/bin
 export PATH=$PATH:~/.config/bin
-
-# checkmark
-printf '\u2705 '
