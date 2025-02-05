@@ -1,2 +1,3 @@
+echo -n "aliases"
 
 alias reloadshell='source ~/.zshrc'

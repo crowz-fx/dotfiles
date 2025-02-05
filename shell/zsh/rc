@@ -107,14 +107,33 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-echo -n "processing >> "
+
+# end of zsh gen'd config
+
+echo -n "processing"
+echo -n "\n  hidden ["
 source ~/shell/rc
 
-source ~/.config/shell/env
-source ~/.config/shell/aliases
-source ~/.config/shell/additional_sources
+CHECKMARK="\u2705"
+FAILED="\xF0\x9F\x9A\xAB"
 
-source ~/.config/shell/zsh/env
-source ~/.config/shell/zsh/aliases
-source ~/.config/shell/zsh/prompt
-echo ""
+# $1 - file to source
+# $2 - append to printf
+source_file() {
+  source $1 2> /dev/null
+  if [ $? -ne 0 ]; then
+    printf "$1...$FAILED$2"
+  else
+    printf "...$CHECKMARK$2"
+  fi
+}
+
+echo -n "\n  public ["
+source_file ~/.config/shell/env ", "
+source_file ~/.config/shell/aliases ", "
+source_file ~/.config/shell/additional_sources "]"
+
+echo -n "\n     zsh ["
+source_file ~/.config/shell/zsh/env ", "
+source_file ~/.config/shell/zsh/aliases ", "
+source_file ~/.config/shell/zsh/prompt "]\n"
