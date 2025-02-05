@@ -98,6 +98,8 @@ button:hover {
 #custom-mic,
 #custom-power,
 #custom-gpu,
+#custom-weather,
+#custom-spotify,
 #mpd {
   padding: 0 10px;
   color: #ffffff;
@@ -206,14 +208,19 @@ label:focus {
   background-color: #f53c3c;
 }
 
-#pulseaudio,
-#custom-gpu {
+#pulseaudio {
   background-color: #f1c40f;
   color: #000000;
 }
 
 #custom-gpu {
   /* min-width: 55px; */
+  color: #fff;
+  background-color: #2d3436;
+}
+
+#custom-spotify {
+  background-color: #eb4d4b;
 }
 
 #pulseaudio.muted {
@@ -238,6 +245,11 @@ label:focus {
   min-width: 100px;
 }
 
+#custom-weather {
+  background-color: darkslateblue;
+  color: #ffffff;
+}
+
 #custom-media.custom-spotify {
   background-color: #66cc99;
 }
@@ -255,7 +267,7 @@ label:focus {
 }
 
 #tray {
-  background-color: #2980b9;
+  background-color: darkmagenta;
 }
 
 #tray > .passive {

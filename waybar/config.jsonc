@@ -10,6 +10,7 @@
     "hyprland/workspaces",
     "custom/power",
     "idle_inhibitor",
+    "custom/weather",
     // "user",
     // "temperature",
     "cpu",
@@ -24,8 +25,9 @@
   ],
   "modules-center": ["hyprland/window"],
   "modules-right": [
+    "custom/spotify",
     "tray",
-    "mpd",
+    // "mpd",
     "wireplumber",
     "custom/mic",
     // "power-profiles-daemon",
@@ -34,6 +36,14 @@
     "clock#jpy"
   ],
   // modules configuration
+  "hyprland/window": {
+    "format": "{title}",
+    "separate-outputs": true,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": "Mozilla Firefox",
+      "(.*) - Visual Studio Code": "$1"
+    }
+  },
   "disk#root": {
     "format": "/ {specific_used:0.2f}/{specific_total:0.1f}GB",
     "unit": "GB",
@@ -165,13 +175,14 @@
   },
   "wireplumber": {
     "scroll-step": 5, // %, can be a float
-    "format": "{volume}% {node_name} {icon}",
-    "format-muted": "{volume}% {node_name} 🔇",
+    "format": "{volume}% {node_name}",
+    "format-muted": "🔇 {node_name}",
     "max-volume": "100",
+    "tooltip": false,
     "format-icons": {
       "headphones-lineout": "🎧",
-      "monitor-hdmi2": "🖥️",
-      "monitor-hdmi1": "🖥️"
+      "monitor-hdmi1": "🖥️",
+      "monitor-hdmi2": "🖥️"
     },
     "on-click": "$HOME/.config/bin/handle-audio output toggle",
     "on-click-middle": "$HOME/.config/bin/handle-audio output mute",
@@ -181,7 +192,6 @@
     "interval": 1,
     "format": "{}",
     "format-muted": "{} 🔇",
-    "tooltip": true,
     "return-type": "json",
     "exec": "$HOME/.config/bin/handle-audio input get",
     "on-click-middle": "$HOME/.config/bin/handle-audio input mute"
@@ -199,7 +209,7 @@
     // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
   },
   "custom/power": {
-    "format": "🔌",
+    "format": "⏏️",
     "tooltip": true,
     "tooltip-format": "Trigger System Menu",
     "on-click": "$HOME/.config/bin/trigger-system-action menu"
@@ -209,5 +219,23 @@
     "format": "GPU:{}%",
     "exec": "$HOME/.config/bin/get-stats",
     "tooltip": false
+  },
+  "custom/weather": {
+    "interval": 3600,
+    "exec": "curl 'https://wttr.in/London?format=2'"
+  },
+  "custom/spotify": {
+    "format": "{}",
+    "escape": true,
+    "return-type": "json",
+    "max-length": 40,
+    // "interval": 30, // Remove this if your script is endless and write in loop
+    "on-click": "playerctl -p spotify play-pause",
+    "on-click-right": "killall spotify",
+    "smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+    "on-scroll-up": "playerctl -p spotify next",
+    "on-scroll-down": "playerctl -p spotify previous",
+    "exec": "$HOME/.config/waybar/custom_modules/mediaplayer.py 2> /dev/null",
+    "exec-if": "pgrep spotify"
   }
 }

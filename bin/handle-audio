@@ -36,7 +36,7 @@ handle_source_get() {
     state_class_mapping="muted"
   fi
 
-  echo "{\"text\": \"$current_source_state $current_source\", \"class\": \"$state_class_mapping\"}"
+  echo "{\"text\": \"🎤 $current_source_state\", \"class\": \"$state_class_mapping\"}"
   sleep 0.2
 }
 
