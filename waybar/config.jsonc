@@ -221,7 +221,7 @@
     "tooltip": false
   },
   "custom/weather": {
-    "interval": 3600,
+    "interval": 1200,
     "exec": "curl 'https://wttr.in/London?format=2'"
   },
   "custom/spotify": {
