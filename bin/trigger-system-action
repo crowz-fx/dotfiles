@@ -12,7 +12,11 @@ if [[ "$action" == "menu" ]]; then
 elif [[ "$action" == "lock" ]]; then
   script_notif "Locking PC"
 
-  # keyring doesn't lock on lock, dumb, so force a lock of all keyrings/collections
+  # nuke all keys in agent
+  ~/.config/bin/handle-keys remove
+
+  # keyring doesn't lock on lock, dumb, so force a lock of all 
+  # keyrings/collections
   dbus-send --dest=org.gnome.keyring \
     --print-reply \
     /org/freedesktop/secrets \
