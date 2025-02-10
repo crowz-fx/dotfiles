@@ -1,0 +1,92 @@
+#!/bin/bash
+
+(return 0 2>/dev/null) && sourced=1 || sourced=0
+
+. ~/.config/bin/includes/utils.sh
+ssh_key_dir_base="${HOME}/.ssh"
+ssh_agent_env=${ssh_key_dir_base}/agent.env
+action=${1:-null}
+key_file=${2:-null}
+expiry_time=${3:-3600} # default to 1 hour
+
+source_agent_env() {
+  . "$ssh_agent_env" >| /dev/null 2>&1
+}
+
+check_agent_status() {
+  # 0=agent running w/ key
+  # 1=agent w/o key
+  # 2=agent not running
+  agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+}
+
+case $action in
+  list)
+    source_agent_env
+    check_agent_status
+    echoi "Listing added keys..."
+
+    if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+      echow "Not running..."
+    elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+      echoi "Running, but no keys..."
+    else
+      ssh-add -L
+    fi
+    ;;    
+  add)
+    check_agent_status
+    echoi "Adding key [${key_file}]..."
+
+    if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+      (umask 077; ssh-agent >| "$ssh_agent_env");
+      source_agent_env
+      ssh-add -t $expiry_time "${key_file}"
+      echoi "Added!"
+
+      echoi "Not sauced, run [source ${ssh_agent_env}] to get access without reloading shell"
+    elif [ "$SSH_AUTH_SOCK" ]; then #&& [ $agent_run_state = 1 ]; then
+      ssh-add -t $expiry_time "${key_file}"
+      echoi "Added!"
+    fi
+
+    ;;
+  remove)
+    source_agent_env
+    agent_run_state=check_agent_status
+    echoi "Removing all keys..."
+    
+    if [ ! "$SSH_AUTH_SOCK" ] || [ $agent_run_state = 2 ]; then
+      echow "Not running..."
+    elif [ "$SSH_AUTH_SOCK" ] && [ $agent_run_state = 1 ]; then
+      echoi "Running, but no keys..."
+    else
+      ssh-add -D
+      echoi "Removed!"
+    fi
+    ;;
+
+  kill)
+    # pids=`ps -ef | grep ssh-agent | awk -F ' ' '{print $2}'`
+    pids=$(pidof ssh-agent)
+
+    if [ ! -z "$pids" ]; then
+      echoi "Killing off ssh-agents running..."
+      kill -9 $pids
+      if [ $? -eq 0 ]; then
+        echoi "Dead!"
+      else
+        echoe "Something didn't go right?!"
+      fi
+    else
+      echow "No ssh-agents already running!"
+    fi 
+    
+    rm -f "${ssh_agent_env}"
+    unset SSH_AUTH_SOCK SSH_AGENT_PID
+    ;;
+  *)
+    echoe "Unrecognised option supplied [$action]"
+    echoe "Choose one of:\n\tlist\n\tadd <key>\n\tremove"
+    return 1
+esac
