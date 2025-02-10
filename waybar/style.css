@@ -248,6 +248,7 @@ label:focus {
 #custom-weather {
   background-color: darkslateblue;
   color: #ffffff;
+  padding-top: 3px;
 }
 
 #custom-media.custom-spotify {
