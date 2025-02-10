@@ -44,7 +44,9 @@ case $action in
       ssh-add -t $expiry_time "${key_file}"
       echoi "Added!"
 
-      echoi "Not sauced, run [source ${ssh_agent_env}] to get access without reloading shell"
+      if [ $sourced = 0 ]; then
+        echoi "Not sauced, run [source ${ssh_agent_env}] to get access without reloading shell"
+      fi
     elif [ "$SSH_AUTH_SOCK" ]; then #&& [ $agent_run_state = 1 ]; then
       ssh-add -t $expiry_time "${key_file}"
       echoi "Added!"
