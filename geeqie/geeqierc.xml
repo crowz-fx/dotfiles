@@ -373,6 +373,9 @@
 
         animate = "true" >
 
+        <dialogs>
+            <window title = "Copy" role = "dlg_dest_folder" x = "2041" y = "177" w = "1622" h = "700" />
+        </dialogs>
 
         <toolbar>
             <clear/>
