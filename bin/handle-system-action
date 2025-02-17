@@ -9,7 +9,7 @@ script_check_positional_arg $supplied_arg "action"
 case $supplied_arg in
   lock)
     script_notif "Locking PC"
-    sleep 0.2; loginctl lock-session
+    sleep 0.2; ~/.config/bin/trigger-system-action lock
     ;;    
   sleep)
     script_notif "Sending to sleep"
