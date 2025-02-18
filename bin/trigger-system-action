@@ -12,6 +12,9 @@ if [[ "$action" == "menu" ]]; then
 elif [[ "$action" == "lock" ]]; then
   script_notif "Locking PC"
 
+  # pause any media playing like YT, music etc.
+  playerctl pause
+
   # nuke all keys in agent
   ~/.config/bin/handle-keys remove
 
