@@ -10,6 +10,7 @@
     "hyprland/workspaces",
     "custom/power",
     "idle_inhibitor",
+    "custom/packages",
     "custom/weather",
     // "user",
     // "temperature",
@@ -237,5 +238,13 @@
     "on-scroll-down": "playerctl -p spotify previous",
     "exec": "$HOME/.config/waybar/custom_modules/mediaplayer.py 2> /dev/null",
     "exec-if": "pgrep spotify"
+  },
+  "custom/packages": {
+    "interval": 3600,
+    "format": "{}",
+    "return-type": "json",
+    "exec": "$HOME/.config/waybar/custom_modules/packages.py 2> /dev/null",
+    "tooltip": true,
+    "hide-on-empty-text": true
   }
 }
