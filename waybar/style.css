@@ -100,6 +100,7 @@ button:hover {
 #custom-gpu,
 #custom-weather,
 #custom-spotify,
+#custom-packages,
 #mpd {
   padding: 0 10px;
   color: #ffffff;
@@ -253,6 +254,10 @@ label:focus {
 
 #custom-media.custom-spotify {
   background-color: #66cc99;
+}
+
+#custom-packages {
+  background-color: #64727d;
 }
 
 #custom-media.custom-vlc {
