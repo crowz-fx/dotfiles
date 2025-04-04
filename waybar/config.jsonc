@@ -11,7 +11,7 @@
     "custom/power",
     "idle_inhibitor",
     "custom/packages",
-    "custom/weather",
+    // "custom/weather",
     // "user",
     // "temperature",
     "cpu",
@@ -222,7 +222,7 @@
     "tooltip": false
   },
   "custom/weather": {
-    "interval": 1200,
+    "interval": 600,
     "exec": "curl 'https://wttr.in/London?format=2'"
   },
   "custom/spotify": {
