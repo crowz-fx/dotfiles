@@ -15,7 +15,10 @@
     "unloadPreviousModelOnSelect": true,
     "highlightChatMessageOnHover": true,
     "doubleClickMessageToEdit": true,
-    "aiNamingMode": "auto"
+    "aiNamingMode": "auto",
+    "autoExpandReasoningBlocks": false,
+    "visualizeSpeculativeDecoding": false,
+    "chatFullWidth": false
   },
   "developer": {
     "showExperimentalFeatures": false,
@@ -24,10 +27,22 @@
     "showModelDownloadOptionData": false,
     "backendDownloadChannel": "stable",
     "appUpdateChannel": "stable",
-    "allowDevelopmentPlugins": true
+    "allowDevelopmentPlugins": true,
+    "unloadPreviousJITModelOnLoad": true,
+    "jitModelTTL": {
+      "enabled": true,
+      "ttlSeconds": 3600
+    },
+    "autoUpdateExtensionPacks": true,
+    "separateReasoningContent": false
   },
   "ui": {
-    "missionControlFullscreen": false
+    "missionControlFullscreen": false,
+    "showModelFileNameInMyModels": false,
+    "configureLoadParamsBeforeLoad": true
+  },
+  "configPresetInclusiveness": {
+    "speculativeDecoding": false
   },
   "toggledConfigDropdowns": [],
   "userInterfaceComplexityLevel": 1,
@@ -39,11 +54,13 @@
   },
   "dismissedModals": [
     "Tool Use Onboarding",
-    "Quick Docs Popover"
+    "Quick Docs Popover",
+    "Logs Options Popover"
   ],
   "pre030ChatsMigrated": 3,
   "appPostUpdateNotificationPending": false,
   "promptWhenCommittingUnsavedChangesWithNewFields": false,
   "enableLocalService": true,
-  "cliInstalled": true
+  "cliInstalled": true,
+  "useHFProxy": true
 }
