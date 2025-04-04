@@ -43,6 +43,7 @@ image/svg+xml=org.geeqie.Geeqie.desktop
 application/pdf=firefox.desktop
 x-scheme-handler/about=firefox.desktop
 x-scheme-handler/unknown=firefox.desktop
+x-scheme-handler/ror2mm=r2modman.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
