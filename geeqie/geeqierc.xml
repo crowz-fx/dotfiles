@@ -317,8 +317,8 @@
         home_path = "" 
         startup_path = "0" 
 
-        main_window.x = "2072" 
-        main_window.y = "157" 
+        main_window.x = "2061" 
+        main_window.y = "114" 
         main_window.w = "1622" 
         main_window.h = "700" 
         main_window.maximized = "false" 
