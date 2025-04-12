@@ -90,5 +90,10 @@ case $action in
   *)
     echoe "Unrecognised option supplied [$action]"
     echoe "Choose one of:\n\tlist\n\tadd <key>\n\tremove"
-    return 1
+
+    if [ $sourced = 1 ]; then
+      return 1
+    else
+      exit 1
+    fi
 esac
