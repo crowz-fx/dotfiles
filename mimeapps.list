@@ -44,6 +44,8 @@ application/pdf=firefox.desktop
 x-scheme-handler/about=firefox.desktop
 x-scheme-handler/unknown=firefox.desktop
 x-scheme-handler/ror2mm=r2modman.desktop
+text/plain=code.desktop
+application/octet-stream=code.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
@@ -91,3 +93,5 @@ text/yaml=code.desktop;
 text/plain=code.desktop;
 image/svg+xml=org.geeqie.Geeqie.desktop;
 application/pdf=firefox.desktop;
+application/octet-stream=code.desktop;
+application/json=code.desktop;

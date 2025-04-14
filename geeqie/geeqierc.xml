@@ -264,6 +264,7 @@
             <file_type key = "mkv" enabled = "true" extensions = ".mkv;.webm" description = "Matroska video file" file_class = "4" writable = "false" allow_sidecar = "false" />
             <file_type key = "wmv" enabled = "true" extensions = ".wmv;.asf" description = "Windows Media Video file" file_class = "4" writable = "false" allow_sidecar = "false" />
             <file_type key = "flv" enabled = "true" extensions = ".flv" description = "Flash Video file" file_class = "4" writable = "false" allow_sidecar = "false" />
+            <file_type key = "wmf" enabled = "true" extensions = ".wmf;.apm" description = "Windows Metafile" file_class = "1" writable = "true" allow_sidecar = "false" />
         </filter>
 
         <marks_tooltips>
