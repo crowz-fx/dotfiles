@@ -46,6 +46,7 @@ x-scheme-handler/unknown=firefox.desktop
 x-scheme-handler/ror2mm=r2modman.desktop
 text/plain=code.desktop
 application/octet-stream=code.desktop
+application/x-zerosize=code.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
@@ -62,7 +63,7 @@ image/png=org.geeqie.Geeqie.desktop;
 video/x-matroska=io.github.celluloid_player.Celluloid.desktop;vlc.desktop;
 text/markdown=code.desktop;
 image/jpeg=org.geeqie.Geeqie.desktop;
-inode/directory=thunar.desktop;
+inode/directory=code.desktop;thunar.desktop;
 text/x-python=code.desktop;
 application/javascript=code.desktop;
 application/x-httpd-php3=code.desktop;
@@ -95,3 +96,4 @@ image/svg+xml=org.geeqie.Geeqie.desktop;
 application/pdf=firefox.desktop;
 application/octet-stream=code.desktop;
 application/json=code.desktop;
+application/x-zerosize=code.desktop;
