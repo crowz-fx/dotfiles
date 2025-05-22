@@ -97,6 +97,7 @@ alias gf="g fetch"
 alias gfp="g fetch -p"
 alias gp="g pull"
 alias gc="g commit -m" # add message
+alias gca="g commit --amend --date=now"
 alias gcb="g checkout" # add branch
 alias gcnb="g checkout -b " # add name of branch
 alias gcm="g checkout master"
