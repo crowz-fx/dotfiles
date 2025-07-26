@@ -108,6 +108,8 @@ alias gsc="g switch -c"
 alias gstash="g stash"
 alias ga="g apply" # i don't do git add as alias as a 'safety' net
 alias gam="g am" # for mailbox etc.
+alias gb="g rebase"
+alias gbi="g rebase -i"
 
 # docker
 alias d="docker"
@@ -118,6 +120,7 @@ alias deit="d exec -it"
 alias dstr="d start"
 alias dstp="d stop"
 alias drst="d restart"
+alias dremoveyesiamsure="d rm -f \$(docker ps -aq)"
 
 # helm
 alias h="helm"
