@@ -10,5 +10,6 @@
     "height": 720
   },
   "OPEN_ON_STARTUP": false,
-  "BACKGROUND_COLOR": "#121214"
+  "BACKGROUND_COLOR": "#121214",
+  "offloadAdmControls": false
 }
