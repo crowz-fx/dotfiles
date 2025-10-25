@@ -47,6 +47,7 @@ x-scheme-handler/ror2mm=r2modman.desktop
 text/plain=code.desktop
 application/octet-stream=code.desktop
 application/x-zerosize=code.desktop
+application/java-archive=7zFM.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;
