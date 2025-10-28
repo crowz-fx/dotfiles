@@ -1,0 +1,54 @@
+#!/bin/bash
+
+. ~/.config/bin/includes/utils.sh
+script_title="Handle Monitor X11"
+monitor="${1:-null}"
+
+LEFT_MONITOR="DP-4"
+RIGHT_MONITOR="DP-2"
+
+LEFT_OPTIONS="--output ${LEFT_MONITOR} --mode 2560x1440 --rate 155 --left-of ${RIGHT_MONITOR}"
+RIGHT_OPTIONS="--output ${RIGHT_MONITOR} --auto --right-of ${LEFT_MONITOR}"
+
+script_check_positional_arg $monitor "monitor"
+
+get_montor_current_status() {
+  echo $(xrandr --listactivemonitors | grep $1 | wc -l)
+}
+
+turn_monitor_off() {
+  echo "turning monitor off..."
+  xrandr --output $1 --off
+}
+
+turn_monitor_on() {
+  echo "turning monitor on..."
+
+  if [[ $1 == $LEFT_MONITOR ]]; then
+    xrandr $LEFT_OPTIONS
+  elif [[ $1 == $RIGHT_MONITOR ]]; then
+    xrandr $RIGHT_OPTIONS
+  fi
+}
+
+handle_monitor_toggle() {
+  status=$(get_montor_current_status $1)
+  echo "monitor [$1] => connection=[$(xrandr | grep $1 | awk '{print $2}')], on=[$status]"
+
+  if [ $status -eq 1 ]; then
+    turn_monitor_off $1
+  else
+    turn_monitor_on $1
+  fi
+}
+
+case $monitor in
+  left)
+    handle_monitor_toggle $LEFT_MONITOR
+    ;;
+  right)
+    handle_monitor_toggle $RIGHT_MONITOR
+    ;;
+  *)
+    script_notif_critical "Unrecognised monitor supplied [$monitor]"
+esac
