@@ -12,7 +12,7 @@ RIGHT_OPTIONS="--output ${RIGHT_MONITOR} --auto --right-of ${LEFT_MONITOR}"
 
 script_check_positional_arg $monitor "monitor"
 
-get_montor_current_status() {
+get_monitor_current_status() {
   echo $(xrandr --listactivemonitors | grep $1 | wc -l)
 }
 
@@ -32,7 +32,7 @@ turn_monitor_on() {
 }
 
 handle_monitor_toggle() {
-  status=$(get_montor_current_status $1)
+  status=$(get_monitor_current_status $1)
   echo "monitor [$1] => connection=[$(xrandr | grep $1 | awk '{print $2}')], on=[$status]"
 
   if [ $status -eq 1 ]; then
