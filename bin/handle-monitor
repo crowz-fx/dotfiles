@@ -9,7 +9,7 @@ RIGHT_MONITOR="DP-2"
 
 script_check_positional_arg $monitor "monitor"
 
-get_montor_current_status() {
+get_monitor_current_status() {
   status=$(hyprctl monitors all -j | jq -r ".[] | select(.name==\"${1}\")")
 
   # returns true / false
@@ -28,7 +28,7 @@ turn_monitor_on() {
 }
 
 handle_monitor_toggle() {
-  status=$(get_montor_current_status $1)
+  status=$(get_monitor_current_status $1)
   echo "monitor currently is_disabled=[$status]"
 
   if [[ $status == "true" ]]; then
