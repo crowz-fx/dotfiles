@@ -15,7 +15,6 @@ alias rebootn="sudo reboot now"
 alias rebootfw="sudo ufw disable && sudo ufw enable && sudo ufw reload"
 
 # connectivity
-alias how_usb='echo "usbipd.exe list; usbipd.exe attach --wsl --busid=<id>'
 alias picocom='picocom -e b'
 alias how_picocom='echo "picocom -b <baud rate> <device>"'
 alias serial='picocom'
@@ -110,6 +109,8 @@ alias ga="g apply" # i don't do git add as alias as a 'safety' net
 alias gam="g am" # for mailbox etc.
 alias gb="g rebase"
 alias gbi="g rebase -i"
+alias gclonegh="clone github.com" # usage: gclonegh <user> <repo>
+
 
 # docker
 alias d="docker"
@@ -121,6 +122,7 @@ alias dstr="d start"
 alias dstp="d stop"
 alias drst="d restart"
 alias dremoveyesiamsure="d rm -f \$(docker ps -aq)"
+alias dw=""
 
 # helm
 alias h="helm"

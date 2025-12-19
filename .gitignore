@@ -4,8 +4,7 @@ go/
 pulse/
 dconf/
 chromium/
-discord/*
-!discord/settings.json
+discord/
 session/
 kde.org/
 obs-studio/
@@ -73,4 +72,9 @@ cantata/
 eas-cli-nodejs/
 obsidian/
 OrcaSlicer/
+Vampire*
 Slack/
+*VPN/
+fcast*
+geeqie/
+pavucontrol*
