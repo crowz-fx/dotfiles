@@ -98,3 +98,4 @@ application/octet-stream=code.desktop;
 application/json=code.desktop;
 application/x-zerosize=code.desktop;
 application/java-archive=7zFM.desktop;
+video/mp4=mpv.desktop;

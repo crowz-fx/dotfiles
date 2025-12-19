@@ -1,0 +1,35 @@
+#!/bin/bash
+
+. ~/.config/bin/includes/utils.sh
+script_title="Clone Repo"
+
+hosting="${1:-null}"
+user="${2:-null}"
+repo="${3:-null}"
+
+NON_NEST_USER="crowz-fx"
+
+script_check_positional_arg $hosting "host type [github.com]"
+script_check_positional_arg $user "user [crowz-fx]"
+script_check_positional_arg $repo "repo"
+
+URL="git@${hosting}:${user}/${repo}.git"
+git ls-remote "$URL" &> /dev/null
+
+if [[ $? -eq 0 ]]; then
+  
+  directory=$repo
+  # append user for folder name if not mine
+  if [[ "${NON_NEST_USER}" != "${user}" ]]; then
+    echoi "Appending user to directory name as not my repo..."
+    directory="${user}_${directory}"
+  fi
+
+  echod "clone URL=[$URL]"
+  echod "clone location=[$HOME/git/$directory]"
+  git clone $URL $HOME/git/$directory
+
+else
+  echoe "Repo at remote [$URL] not found, bad perms or args"
+  exit 1
+fi
