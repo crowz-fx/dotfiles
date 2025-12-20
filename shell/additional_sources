@@ -24,8 +24,11 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools
+
 ssh_env="$HOME/.ssh/agent.env"
 test -f "$ssh_env" && . "$ssh_env" >| /dev/null
 
 #export PATH=$PATH:/opt/flutter/bin
-export PATH=$PATH:~/.config/bin
+export PATH=$PATH:$HOME/.config/bin
