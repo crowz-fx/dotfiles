@@ -48,6 +48,7 @@ text/plain=code.desktop
 application/octet-stream=code.desktop
 application/x-zerosize=code.desktop
 application/java-archive=7zFM.desktop
+x-scheme-handler/bruno=bruno.desktop
 
 [Added Associations]
 x-scheme-handler/http=firefox.desktop;brave-browser.desktop;
