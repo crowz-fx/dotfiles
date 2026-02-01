@@ -4,7 +4,7 @@ go/
 pulse/
 dconf/
 chromium/
-discord/
+*iscord/
 session/
 kde.org/
 obs-studio/
@@ -28,6 +28,7 @@ unity3d/
 TradingView/
 libvirt/
 configstore/
+jellyfin*/
 tool_state
 settings
 .android/
@@ -36,17 +37,13 @@ Android*/
 QtProject.conf
 VirtualBox/
 FreeCAD/
-Thunar/accels.scm
+Thunar/
 Fritzing/
 stripe/
 gtk-3.0/
 hardinfo2/
-!LM Studio/
-LM Studio/*
-!LM Studio/settings.json
-!geeqie/
-geeqie/*
-!geeqie/geeqierc.xml
+LM Studio/
+geeqie/
 cinnamon/
 menus/
 nemo/
@@ -54,8 +51,6 @@ cinnamon*
 kicad/
 font*
 maestral/
-Thunar/
-*thunar.xml
 godot/
 blender/
 simple-scan/
@@ -76,6 +71,14 @@ Vampire*
 Slack/
 *VPN/
 fcast*
-geeqie/
 pavucontrol*
 BraveSoftware/
+maxima/
+lumo-fe/
+pebble-fe/
+wxMaxima.conf
+libreoffice/
+evolution/
+easyeffects/
+bruno/
+Electron/

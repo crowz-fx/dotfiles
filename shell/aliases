@@ -13,6 +13,9 @@ alias propose="apropos"
 # system
 alias rebootn="sudo reboot now"
 alias rebootfw="sudo ufw disable && sudo ufw enable && sudo ufw reload"
+alias gotosleep="systemctl suspend"
+alias gotosleepnow="gotosleep -i"
+alias whyareyounotasleep="systemd-inhibit --list --mode=block"
 
 # connectivity
 alias picocom='picocom -e b'
