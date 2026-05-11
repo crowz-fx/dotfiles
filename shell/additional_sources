@@ -34,5 +34,9 @@ export CARGO_DIR="$HOME/.cargo"
 export PATH=$PATH:$CARGO_DIR/bin
 . "$CARGO_DIR/env"
 
+export BUN_HOME="$HOME/.bun"
+[ -s "$BUN_HOME/_bun" ] && source "$BUN_HOME/_bun"
+export PATH="$BUN_HOME/bin:$PATH"
+
 #export PATH=$PATH:/opt/flutter/bin
 export PATH=$PATH:$HOME/.config/bin
