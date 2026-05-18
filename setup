@@ -2,10 +2,29 @@
 
 echo 'handling overwrites and setup for config...'
 
-# TODO - go through all files in here and process any that have #00
+if [ -z "$1" ]; then
+  echo "supply ssh keyname in comma-seperated format, like 'key,key2'"
+  exit 1
+fi
+IFS=',' read -ra SSH_KEY_NAMES <<< "$1"
 
-# process all the reverse symlinks, i.e. from private into public
-ln -s ~/autostart ~/.config/autostart
-ln -s ~/gtk-3.0/bookmarks ~/.config/gtk-3.0/bookmarks
+SSH_DIR="$HOME/.ssh"
+if [ ! -d $SSH_DIR ]; then
+    echo "setting up .ssh dir..."
+    mkdir -m 700 $SSH_DIR
+    echo "ssh dir created!"
 
-echo 'add and handle all symlink processing'
+    echo "creating ssh config file (you need to add the config!)"
+    touch $SSH_DIR/config
+    chmod 600 $SSH_DIR/config
+    echo "config file created!"
+
+    echo "creating keys (you still need to add the keys!)..."
+    for key in "${SSH_KEY_NAMES[@]}"; do
+        touch $SSH_DIR/{$key,$key.pub}
+        chmod 600 $SSH_DIR/{$key,$key.pub}
+    done
+    echo "key files created!"
+fi
+
+echo "script completed!"
