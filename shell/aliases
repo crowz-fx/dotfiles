@@ -19,7 +19,6 @@ alias whyareyounotasleep="systemd-inhibit --list --mode=block"
 
 # connectivity
 alias picocom='picocom -e b'
-alias how_picocom='echo "picocom -b <baud rate> <device>"'
 alias serial='picocom'
 alias ovpn="openvpn"
 
@@ -113,7 +112,7 @@ alias gam="g am" # for mailbox etc.
 alias gb="g rebase"
 alias gbi="g rebase -i"
 alias gclonegh="clone github.com" # usage: gclonegh <user> <repo>
-
+alias gdotfiles="g --work-tree $HOME/.config/ --git-dir=$HOME/git/dotfiles.git/"
 
 # docker
 alias d="docker"
