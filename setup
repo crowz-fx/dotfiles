@@ -31,4 +31,12 @@ echo "setting XDG user dirs (rename if needed and re-run)..."
 xdg-user-dirs-update
 echo "dirs updated!"
 
+echo "installing applications and sdks..."
+mkdir -p $NVM_DIR && \
+PROFILE=/dev/null curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.5/install.sh | bash && \
+source ~/.bashrc && \
+nvm install --lts && \
+npm install -g pnpm
+echo "installed!"
+
 echo "script completed!"
