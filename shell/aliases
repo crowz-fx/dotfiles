@@ -39,26 +39,28 @@ alias ....="cd ../../../"
 alias .....="cd ../../../../"
 
 # system/package management
-alias pinstall="sudo pacman -S --needed"
-alias pinstall_file="sudo pacman -U" # local file or URL
-alias premove="sudo pacman -R"
-alias premovedeps="sudo pacman -Rs"
-alias pnuke="sudo pacman -Runs"
+alias pkg_default_bin="sudo pacman"
+alias pinstall="pkg_default_bin -S --needed"
+alias pinstall_file="pkg_default_bin -U" # local file or URL
+alias premove="pkg_default_bin -R"
+alias premovedeps="pkg_default_bin -Rs"
+alias pnuke="pkg_default_bin -Runs"
 
-alias yinstall="yay -S --needed"
-alias yremove="yay -R"
-alias yremovedeps="yay -Rs"
-alias ynuke="yay -Runs"
-
-alias pkg_stats="yay -Ps"
-alias pkg_update="yay -Sy" # s=synchronise, y=update dbs
-alias pkg_fupdate="yay -Syy" # s=synchronise, yy=force update dbs
-alias pkg_upgrade="yay -Syu" # s=synchronise, y=update dbs, u=upgrade full system
-alias pkg_clean="yay -Sc" # sc=nuke all package caches, will confirm when running
-alias pkg_search="yay -Ss" # whole db search
-alias pkg_isearch="yay -Qs" # installed only search
-alias pkg_show="yay -Si" # show info on package, doens't have to be installed
-alias pkg_get="yay -Sw" # download a pkg
+alias pkg_bin="paru"
+alias pkg_install="pkg_bin -S --needed"
+alias pkg_install_file="pkg_bin -U"
+alias pkg_remove="pkg_bin -R"
+alias pkg_removedeps="pkg_bin -Rs"
+alias pkg_nuke="pkg_bin -Runs"
+alias pkg_stats="pkg_bin -Ps"
+alias pkg_update="pkg_bin -Sy" # s=synchronise, y=update dbs
+alias pkg_fupdate="pkg_bin -Syy" # s=synchronise, yy=force update dbs
+alias pkg_upgrade="pkg_bin -Syu" # s=synchronise, y=update dbs, u=upgrade full system
+alias pkg_clean="pkg_bin -Sc" # sc=nuke all package caches, will confirm when running
+alias pkg_search="pkg_bin -Ss" # whole db search
+alias pkg_isearch="pkg_bin -Qs" # installed only search
+alias pkg_show="pkg_bin -Si" # show info on package, doens't have to be installed
+alias pkg_get="pkg_bin -Sw" # download a pkg
 
 # listing, looking and searching
 alias ls="ls --color=auto"
