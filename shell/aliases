@@ -5,6 +5,7 @@ echo -n "aliases"
 ############################################################
 
 # terminal, config and shell
+alias code="codium"
 alias editconf="code ~/.config"
 alias mux='[ -z "$TMUX"  ] && { tmux new -As0; }'
 alias v="vim"
