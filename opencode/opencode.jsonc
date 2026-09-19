@@ -1,0 +1,32 @@
+// https://opencode.ai/docs/config
+// run `opencode debug config` to resolve and show config
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": false,
+  "default_agent": "plan",
+  "share": "disabled",
+  "permission": {
+    "*": "ask",
+    "grep *": "allow",
+    "git status": "allow",
+    "git diff*": "allow",
+    "git log*": "allow",
+    "git show*": "allow",
+    "git *": "deny",
+    "glob *": "allow",
+    "tree *": "allow",
+    "wc *": "allow",
+    "find *": "allow",
+    "head *": "allow",
+    "tail *": "allow",
+    "todowrite": "allow",
+    "rm *": "deny",
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    "external_directory": "deny"
+  }
+}

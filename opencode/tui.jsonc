@@ -1,0 +1,5 @@
+// https://opencode.ai/docs/config/#tui
+{
+    "$schema": "https://opencode.ai/tui.json",
+    "theme": "nord"
+}
