@@ -2,31 +2,109 @@
 // run `opencode debug config` to resolve and show config
 {
   "$schema": "https://opencode.ai/config.json",
-  "autoupdate": false,
   "default_agent": "plan",
+  "update": "disable",
   "share": "disabled",
-  "permission": {
-    "*": "ask",
-    "grep *": "allow",
-    "git status": "allow",
-    "git diff*": "allow",
-    "git log*": "allow",
-    "git show*": "allow",
-    "git *": "deny",
-    "glob *": "allow",
-    "tree *": "allow",
-    "wc *": "allow",
-    "find *": "allow",
-    "head *": "allow",
-    "tail *": "allow",
-    "todowrite": "allow",
-    "rm *": "deny",
-    "read": {
-      "*": "allow",
-      "*.env": "deny",
-      "*.env.*": "deny",
-      "*.env.example": "allow"
+  "permissions": [
+    {
+      "action": "*",
+      "resource": "*",
+      "effect": "ask"
     },
-    "external_directory": "deny"
-  }
+    {
+      "action": "grep *",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "git status",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "git diff*",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "git log*",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "git show*",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "git *",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "glob *",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "tree *",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "wc *",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "find *",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "head *",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "tail *",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "todowrite",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "rm *",
+      "resource": "*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*",
+      "effect": "allow"
+    },
+    {
+      "action": "read",
+      "resource": "*.env",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.env.*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.env.example",
+      "effect": "allow"
+    },
+    {
+      "action": "external_directory",
+      "resource": "*",
+      "effect": "deny"
+    }
+  ]
 }
