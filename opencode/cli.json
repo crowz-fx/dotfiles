@@ -8,5 +8,8 @@
     "markdown": "rendered",
     "thinking": "show",
     "scrollbar": true
+  },
+  "tabs": {
+    "enabled": false
   }
 }
