@@ -39,4 +39,8 @@ nvm install --lts && \
 npm install -g pnpm
 echo "installed!"
 
+echo "cloning tpm..."
+git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/plugins/tpm
+echo "first time in mux, run prefix + I"
+
 echo "script completed!"
