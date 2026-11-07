@@ -42,7 +42,7 @@ script_notif_critical() {
 script_check_positional_arg() {
   if [ -z "$1" ] || [[ "$1" == "" ]] || [[ "$1" == "null" ]]; then
     echo "Didn't supply [$2]"
-    script_notif_critical "Didn't supply [$2]"
+    script_notif "Didn't supply [$2]"
     exit 1
   fi
 }

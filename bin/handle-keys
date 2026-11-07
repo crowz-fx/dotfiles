@@ -3,6 +3,8 @@
 (return 0 2>/dev/null) && sourced=1 || sourced=0
 
 . ~/.config/bin/includes/utils.sh
+script_title="Handle Keys"
+
 ssh_key_dir_base="${HOME}/.ssh"
 ssh_agent_env=${ssh_key_dir_base}/agent.env
 action=${1:-null}
@@ -20,6 +22,8 @@ check_agent_status() {
   agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
 }
 
+script_check_positional_arg $action "action [list|add|remove|kill]"
+
 case $action in
   list)
     source_agent_env
@@ -35,6 +39,7 @@ case $action in
     fi
     ;;    
   add)
+    script_check_positional_arg $key_file "private key [<path-to-key>]"
     check_agent_status
     echoi "Adding key [${key_file}]..."
 

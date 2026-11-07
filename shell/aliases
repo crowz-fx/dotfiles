@@ -12,15 +12,25 @@ alias propose="apropos"
 
 # system
 alias rebootn="sudo reboot now"
-alias rebootfw="sudo ufw disable && sudo ufw enable && sudo ufw reload"
+alias rebootfw="sudo ufw disable && \
+  sudo ufw enable && \
+  sudo ufw reload"
 alias gotosleep="systemctl suspend"
 alias gotosleepnow="gotosleep -i"
 alias whyareyounotasleep="systemd-inhibit --list --mode=block"
+alias ctl="systemctl --no-pager -l"
 
 # connectivity
 alias picocom='picocom -e b'
 alias serial='picocom'
 alias ovpn="openvpn"
+alias zero="sudo zerotier-cli"
+alias zeroup="handle-service start zerotier-one && \
+  echoi 'Pause for connections...' && sleep 3 && \
+  zero status && echo "" && \
+  zero listnetworks && echo "" && \
+  zero listpeers"
+alias zerodown="handle-service stop zerotier-one"
 
 # dns
 alias dns="sudo resolvectl"
@@ -86,8 +96,9 @@ alias al="alias"
 alias cls="clear"
 alias copy="wl-copy"
 alias pasta="wl-paste"
-alias how_find_size="echo 'find <loc> -size +5M -exec ls -sh {} +'"
+alias how_find_size="echow 'find <loc> -size +5M -exec ls -sh {} +'"
 alias free="free -m"
+alias watch="watch " # space is interpreted as another alias
 
 # git
 alias g="git"
@@ -117,6 +128,8 @@ alias gclonegh="clone github.com" # usage: gclonegh <user> <repo>
 alias gdotfiles="g --work-tree $HOME/.config/ --git-dir=$HOME/git/dotfiles.git/"
 
 # docker
+alias dockerup="handle-service start docker"
+alias dockerdown=" handle-service stop docker.socket"
 alias d="docker"
 alias dpa="d ps -a"
 alias dl="d logs"
@@ -126,7 +139,8 @@ alias dstr="d start"
 alias dstp="d stop"
 alias drst="d restart"
 alias dremoveyesiamsure="d rm -f \$(docker ps -aq)"
-alias dw=""
+alias dw="watch dpa"
+alias dimages="d images --format 'table {{.ID}}\t{{.Repository}}:{{.Tag}}\t{{.CreatedAt}}\t{{.Containers}}\t{{.Size}}'"
 
 # helm
 alias h="helm"
@@ -191,6 +205,7 @@ alias tw="t workspace"
 
 # dev
 alias caddy443="sudo caddy reverse-proxy --from https://localhost:443 --to http://localhost:3000"
+
 
 ############################################################
 # Functions - processing for aliases depending on OS/release
